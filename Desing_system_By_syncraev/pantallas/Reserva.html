@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELECTROLANDIA · Reservar carga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/base.css">
+<link rel="stylesheet" href="../styles/components.css">
+<link rel="stylesheet" href="../styles/app.css">
+</head>
+<body>
+<div class="app" data-screen-label="Reserva">
+
+  <header class="nav">
+    <a class="brand" href="Home.html"><span class="brand-mark"><svg class="icon"><use href="#i-bolt"></use></svg></span> ELECTROLANDIA</a>
+    <nav class="nav-links grow" style="justify-content:center">
+      <a class="nav-link" href="Home.html"><svg class="icon"><use href="#i-home"></use></svg> Inicio</a>
+      <a class="nav-link active" href="Reserva.html"><svg class="icon"><use href="#i-calendar"></use></svg> Reservar</a>
+      <a class="nav-link" href="Panel Admin.html"><svg class="icon"><use href="#i-grid"></use></svg> Admin</a>
+    </nav>
+    <span class="pill-tag"><svg class="icon icon-sm"><use href="#i-pin"></use></svg> Ciudad Jardín</span>
+  </header>
+
+  <main class="app-main">
+    <div class="container section">
+
+      <!-- Stepper -->
+      <div class="row between" style="margin-bottom:var(--space-8);flex-wrap:wrap;gap:var(--space-4)">
+        <div>
+          <span class="eyebrow"><svg class="icon"><use href="#i-calendar-check"></use></svg> Reserva de carga</span>
+          <h1 class="t-h1" style="margin-top:8px" id="stepTitle">Elige fecha y hora</h1>
+        </div>
+        <div class="stepper" id="stepper">
+          <div class="step active" data-s="1"><span class="num">1</span><span class="lbl">Fecha y hora</span></div>
+          <div class="step-bar"></div>
+          <div class="step" data-s="2"><span class="num">2</span><span class="lbl">Tus datos</span></div>
+          <div class="step-bar"></div>
+          <div class="step" data-s="3"><span class="num">3</span><span class="lbl">Confirmación</span></div>
+        </div>
+      </div>
+
+      <div class="grid-auto" style="grid-template-columns:1.5fr 0.85fr;gap:var(--space-7);align-items:start" id="layout">
+
+        <!-- ============ LEFT (step content) ============ -->
+        <div>
+          <!-- STEP 1 -->
+          <div id="panel1">
+            <div class="grid-auto" style="grid-template-columns:1fr 1fr;gap:var(--space-5)">
+              <div class="calendar">
+                <div class="cal-head"><div class="cal-title" id="calTitle">Junio 2026</div><div class="cal-nav"><button id="calPrev"><svg class="icon icon-sm"><use href="#i-chevron-left"></use></svg></button><button id="calNext"><svg class="icon icon-sm"><use href="#i-chevron-right"></use></svg></button></div></div>
+                <div class="cal-grid" id="calGrid"></div>
+                <div class="divider" style="margin:16px 0"></div>
+                <div class="legend"><span class="legend-item"><span class="legend-swatch" style="background:var(--success)"></span> Disponible</span><span class="legend-item"><span class="legend-swatch" style="background:var(--danger)"></span> Lleno</span><span class="legend-item"><span class="legend-swatch" style="background:var(--primary)"></span> Elegido</span></div>
+              </div>
+              <div class="card" style="align-self:stretch">
+                <div class="card-head"><span class="icon-tile"><svg class="icon"><use href="#i-clock"></use></svg></span><div class="grow"><div class="card-title">Horarios</div><div class="card-sub" id="slotsDate">Selecciona un día</div></div></div>
+                <div id="slotsArea">
+                  <div class="empty" style="padding:var(--space-7)"><span class="icon-tile plain"><svg class="icon"><use href="#i-calendar"></use></svg></span><p class="t-sm t-muted" style="margin-top:10px">Elige una fecha del calendario para ver los horarios.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div id="panel2" style="display:none">
+            <div class="card stack" style="gap:var(--space-5)">
+              <div class="grid-auto" style="grid-template-columns:1fr 1fr;gap:var(--space-4)">
+                <div class="field"><label class="field-label">Nombre completo <span class="req">*</span></label><div class="input-group"><span class="input-icon"><svg class="icon icon-sm"><use href="#i-user"></use></svg></span><input class="input" id="f_name" placeholder="Camila Restrepo"></div><span class="field-error" data-for="f_name" style="display:none"><svg class="icon icon-sm"><use href="#i-alert"></use></svg> Ingresa tu nombre.</span></div>
+                <div class="field"><label class="field-label">WhatsApp <span class="req">*</span></label><div class="input-group"><span class="input-icon"><svg class="icon icon-sm"><use href="#i-whatsapp"></use></svg></span><input class="input" id="f_wa" inputmode="numeric" placeholder="300 123 4567"></div><span class="field-hint" data-hint="f_wa">Te confirmamos por aquí.</span><span class="field-error" data-for="f_wa" style="display:none"><svg class="icon icon-sm"><use href="#i-alert"></use></svg> Número inválido (10 dígitos).</span></div>
+              </div>
+              <div class="grid-auto" style="grid-template-columns:1fr 1fr;gap:var(--space-4)">
+                <div class="field"><label class="field-label">Correo</label><div class="input-group"><span class="input-icon"><svg class="icon icon-sm"><use href="#i-mail"></use></svg></span><input class="input" id="f_mail" type="email" placeholder="camila@correo.com"></div><span class="field-error" data-for="f_mail" style="display:none"><svg class="icon icon-sm"><use href="#i-alert"></use></svg> Correo inválido.</span></div>
+                <div class="field"><label class="field-label">Placa <span class="req">*</span></label><input class="input" id="f_plate" placeholder="ABC-123" style="font-family:var(--font-mono);text-transform:uppercase"><span class="field-error" data-for="f_plate" style="display:none"><svg class="icon icon-sm"><use href="#i-alert"></use></svg> Placa requerida.</span></div>
+              </div>
+              <div class="field"><label class="field-label">Tipo de conector <span class="req">*</span></label>
+                <div class="chooser" style="grid-template-columns:1fr 1fr 1fr;display:grid">
+                  <label class="chooser-opt"><input type="radio" name="conn" value="J1772" checked><span class="mark"></span><span><b>J1772</b><br><span class="t-xs t-muted">Estándar</span></span></label>
+                  <label class="chooser-opt"><input type="radio" name="conn" value="Tipo 2"><span class="mark"></span><span><b>Tipo 2</b><br><span class="t-xs t-muted">Adaptador</span></span></label>
+                  <label class="chooser-opt"><input type="radio" name="conn" value="GB/T-AC"><span class="mark"></span><span><b>GB/T-AC</b><br><span class="t-xs t-muted">Adaptador</span></span></label>
+                </div>
+              </div>
+              <div class="field"><label class="field-label">Observaciones</label><textarea class="textarea" id="f_notes" placeholder="¿Algo que debamos saber sobre tu vehículo o llegada?"></textarea></div>
+              <label class="check"><input type="checkbox" id="f_terms"><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor"/></svg></span><span>Acepto los <b style="color:var(--lime-800)">términos del servicio</b> y la política de tratamiento de datos.</span></label>
+              <span class="field-error" data-for="f_terms" style="display:none"><svg class="icon icon-sm"><use href="#i-alert"></use></svg> Debes aceptar los términos.</span>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div id="panel3" style="display:none">
+            <div class="card" style="padding:var(--space-10) var(--space-8)">
+              <div class="confirm-wrap">
+                <div class="confirm-badge rise"><svg class="icon"><use href="#i-check"></use></svg></div>
+                <h2 class="t-h1" style="margin-bottom:10px">¡Reserva confirmada!</h2>
+                <p class="t-body-lg t-muted" style="margin-bottom:var(--space-6)">Te enviamos los detalles por WhatsApp. Tu bahía estará lista a la hora elegida.</p>
+                <div class="card" style="text-align:left;background:var(--green-soft);border-color:color-mix(in oklch,var(--lime-400) 30%,transparent)">
+                  <div class="row between"><span class="t-label">Código de reserva</span><span class="badge badge-success"><span class="dot"></span> Confirmada</span></div>
+                  <div class="t-data" style="font-size:28px;font-weight:700;color:var(--text-strong);margin:6px 0 16px" id="resCode">EL-2026-0142</div>
+                  <div class="kv"><span class="k">Fecha y hora</span><span class="v t-data" id="sumDate2">—</span></div>
+                  <div class="kv"><span class="k">Conector</span><span class="v" id="sumConn2">—</span></div>
+                  <div class="kv"><span class="k">Vehículo</span><span class="v t-data" id="sumPlate2">—</span></div>
+                  <div class="kv"><span class="k">Potencia</span><span class="v"><span class="power" style="font-size:16px">11.0<span class="unit">kW</span></span></span></div>
+                </div>
+                <div class="row" style="gap:var(--space-3);margin-top:var(--space-6);justify-content:center">
+                  <a class="btn btn-maps" href="https://maps.google.com" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"></use></svg> Cómo llegar</a>
+                  <a class="btn btn-primary" href="Home.html"><svg class="icon"><use href="#i-home"></use></svg> Volver al inicio</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nav buttons -->
+          <div class="row between" style="margin-top:var(--space-6)" id="navBtns">
+            <button class="btn btn-text" id="backBtn" style="visibility:hidden"><svg class="icon"><use href="#i-chevron-left"></use></svg> Atrás</button>
+            <button class="btn btn-primary" id="nextBtn" disabled><span id="nextLbl">Continuar</span> <svg class="icon"><use href="#i-arrow-right"></use></svg></button>
+          </div>
+        </div>
+
+        <!-- ============ RIGHT (summary) ============ -->
+        <aside class="summary-card" id="summaryAside">
+          <div class="card card-dark" style="position:relative;overflow:hidden">
+            <div style="position:absolute;inset:0;opacity:.4;background-image:linear-gradient(rgba(198,245,66,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(198,245,66,.1) 1px,transparent 1px);background-size:24px 24px;mask-image:radial-gradient(circle at 85% 10%,#000,transparent 75%)"></div>
+            <div style="position:relative">
+              <div class="card-head"><span class="icon-tile dark"><svg class="icon"><use href="#i-station"></use></svg></span><div class="grow"><div class="card-title" style="color:#fff">Tu reserva</div><div class="card-sub" style="color:var(--text-on-dark-muted)">Ciudad Jardín · Bahía 3</div></div></div>
+              <div class="kv" style="border-color:rgba(255,255,255,.08)"><span class="k" style="color:var(--text-on-dark-muted)">Fecha</span><span class="v t-data" style="color:#fff" id="sumDate">—</span></div>
+              <div class="kv" style="border-color:rgba(255,255,255,.08)"><span class="k" style="color:var(--text-on-dark-muted)">Hora</span><span class="v t-data" style="color:#fff" id="sumTime">—</span></div>
+              <div class="kv" style="border-color:rgba(255,255,255,.08)"><span class="k" style="color:var(--text-on-dark-muted)">Conector</span><span class="v" style="color:var(--lime-400)" id="sumConn">J1772</span></div>
+              <div class="kv" style="border-color:rgba(255,255,255,.08)"><span class="k" style="color:var(--text-on-dark-muted)">Potencia</span><span class="v"><span class="power" style="color:var(--cyan-400);font-size:16px">11.0<span class="unit">kW</span></span></span></div>
+              <div class="flow-line" style="margin-top:18px"></div>
+              <p class="t-xs" style="color:var(--text-on-dark-muted);margin-top:14px">Sin costo de reserva. Pagas solo la energía consumida.</p>
+            </div>
+          </div>
+          <div class="callout note" style="margin-top:var(--space-4)"><svg class="icon"><use href="#i-info"></use></svg><span>¿Usas Tipo 2 o GB/T-AC? Tenemos adaptadores en sitio, sin costo extra.</span></div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <nav class="tabbar" style="position:sticky;bottom:0;z-index:40" id="mobileTabs">
+    <a class="tabbar-item" href="Home.html"><svg class="icon"><use href="#i-home"></use></svg> Inicio</a>
+    <a class="tabbar-item active" href="Reserva.html"><svg class="icon"><use href="#i-calendar"></use></svg> Reservar</a>
+    <a class="tabbar-item" href="Panel Admin.html"><svg class="icon"><use href="#i-grid"></use></svg> Admin</a>
+  </nav>
+</div>
+
+<script src="../assets/icons.js"></script>
+<script>
+(function () {
+  var MONTHS = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  var DOWS = ['L','M','M','J','V','S','D'];
+  // State
+  var state = { step: 1, year: 2026, month: 5, day: null, time: null, conn: 'J1772' };
+  var FULL_DAYS = { 3:1, 9:1, 17:1, 23:1 };           // lleno
+  var PAST_DAYS = 4;                                    // días < 5 no disponibles
+  var SLOTS = ['08:00','08:30','09:00','09:30','10:00','10:30','14:00','14:30','15:00','15:30','16:00','16:30'];
+  var BUSY = { '09:00':1, '15:30':1, '10:30':1 };
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  function renderCal() {
+    $('calTitle').textContent = MONTHS[state.month] + ' ' + state.year;
+    var first = new Date(state.year, state.month, 1).getDay(); // 0 Sun
+    var offset = (first === 0 ? 6 : first - 1);
+    var days = new Date(state.year, state.month + 1, 0).getDate();
+    var html = DOWS.map(function (d) { return '<div class="cal-dow">' + d + '</div>'; }).join('');
+    for (var i = 0; i < offset; i++) html += '<div class="cal-day muted"></div>';
+    for (var d = 1; d <= days; d++) {
+      var cls = 'cal-day';
+      var isPast = (state.month === 5 && d <= PAST_DAYS);
+      if (isPast) { cls += ' muted'; }
+      else if (FULL_DAYS[d]) { cls += ' full'; }
+      else { cls += ' has-slots'; }
+      if (state.month === 5 && d === 5) cls += ' today';
+      if (state.day === d) cls += ' selected';
+      html += '<div class="' + cls + '" data-day="' + d + '">' + d + '</div>';
+    }
+    $('calGrid').innerHTML = html;
+  }
+
+  function renderSlots() {
+    if (!state.day) return;
+    $('slotsDate').textContent = 'Vie ' + state.day + ' ' + MONTHS[state.month].slice(0,3) + '.';
+    var html = '<div class="slots">' + SLOTS.map(function (t) {
+      var c = 'slot' + (BUSY[t] ? ' busy' : '') + (state.time === t ? ' selected' : '');
+      return '<div class="' + c + '" data-t="' + t + '">' + t + '</div>';
+    }).join('') + '</div>';
+    $('slotsArea').innerHTML = html;
+  }
+
+  function fmtDate() {
+    if (!state.day) return '—';
+    return state.day + ' ' + MONTHS[state.month].slice(0,3) + ' ' + state.year;
+  }
+
+  function updateSummary() {
+    $('sumDate').textContent = fmtDate();
+    $('sumTime').textContent = state.time || '—';
+    $('sumConn').textContent = state.conn;
+  }
+
+  function validateStep1() { return state.day && state.time; }
+
+  function setStep(n) {
+    state.step = n;
+    [1,2,3].forEach(function (i) { $('panel' + i).style.display = (i === n ? 'block' : 'none'); });
+    document.querySelectorAll('#stepper .step').forEach(function (el) {
+      var s = +el.dataset.s;
+      el.classList.toggle('active', s === n);
+      el.classList.toggle('done', s < n);
+    });
+    document.querySelectorAll('#stepper .step-bar').forEach(function (b, i) { b.classList.toggle('done', i < n - 1); });
+    var titles = { 1: 'Elige fecha y hora', 2: 'Cuéntanos de ti', 3: '¡Todo listo!' };
+    $('stepTitle').textContent = titles[n];
+    $('backBtn').style.visibility = (n === 1 || n === 3) ? 'hidden' : 'visible';
+    $('navBtns').style.display = (n === 3) ? 'none' : 'flex';
+    $('summaryAside').style.display = (n === 3) ? 'none' : 'block';
+    $('layout').style.gridTemplateColumns = (n === 3) ? '1fr' : '1.5fr 0.85fr';
+    $('nextLbl').textContent = (n === 2) ? 'Confirmar reserva' : 'Continuar';
+    refreshNext();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function refreshNext() {
+    var ok = (state.step === 1) ? validateStep1() : true;
+    $('nextBtn').disabled = !ok;
+  }
+
+  function showErr(id, show) {
+    var e = document.querySelector('.field-error[data-for="' + id + '"]');
+    if (e) e.style.display = show ? 'flex' : 'none';
+    var input = $(id);
+    if (input && input.classList) input.setAttribute('aria-invalid', show ? 'true' : 'false');
+  }
+
+  function validateStep2() {
+    var ok = true;
+    var name = $('f_name').value.trim();
+    var wa = $('f_wa').value.replace(/\D/g,'');
+    var mail = $('f_mail').value.trim();
+    var plate = $('f_plate').value.trim();
+    var terms = $('f_terms').checked;
+    showErr('f_name', !name); if (!name) ok = false;
+    showErr('f_wa', wa.length !== 10); if (wa.length !== 10) ok = false;
+    var mailOk = !mail || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail);
+    showErr('f_mail', !mailOk); if (!mailOk) ok = false;
+    showErr('f_plate', !plate); if (!plate) ok = false;
+    showErr('f_terms', !terms); if (!terms) ok = false;
+    return ok;
+  }
+
+  function finalize() {
+    $('sumDate2').textContent = fmtDate() + ' · ' + state.time;
+    $('sumConn2').textContent = state.conn;
+    $('sumPlate2').textContent = $('f_plate').value.trim().toUpperCase() || '—';
+    $('resCode').textContent = 'EL-2026-' + String(Math.floor(100 + Math.random()*899));
+  }
+
+  // Events
+  $('calGrid').addEventListener('click', function (e) {
+    var c = e.target.closest('.cal-day');
+    if (!c || c.classList.contains('muted') || c.classList.contains('full')) return;
+    state.day = +c.dataset.day; state.time = null;
+    renderCal(); renderSlots(); updateSummary(); refreshNext();
+  });
+  $('slotsArea').addEventListener('click', function (e) {
+    var s = e.target.closest('.slot');
+    if (!s || s.classList.contains('busy')) return;
+    state.time = s.dataset.t;
+    renderSlots(); updateSummary(); refreshNext();
+  });
+  $('calPrev').addEventListener('click', function () { if (state.month > 5) { state.month--; renderCal(); } });
+  $('calNext').addEventListener('click', function () { if (state.month < 11) { state.month++; renderCal(); } });
+
+  document.querySelectorAll('input[name="conn"]').forEach(function (r) {
+    r.addEventListener('change', function () { state.conn = r.value; updateSummary(); });
+  });
+  ['f_name','f_wa','f_mail','f_plate'].forEach(function (id) {
+    $(id).addEventListener('input', function () { showErr(id, false); });
+  });
+  $('f_terms').addEventListener('change', function () { showErr('f_terms', false); });
+
+  $('nextBtn').addEventListener('click', function () {
+    if (state.step === 1) { if (validateStep1()) setStep(2); }
+    else if (state.step === 2) { if (validateStep2()) { finalize(); setStep(3); } }
+  });
+  $('backBtn').addEventListener('click', function () { if (state.step > 1) setStep(state.step - 1); });
+
+  // init
+  renderCal(); updateSummary();
+
+  function syncTabs(){ $('mobileTabs').style.display = window.innerWidth > 760 ? 'none' : 'flex'; }
+  syncTabs(); window.addEventListener('resize', syncTabs);
+})();
+</script>
+</body>
+</html>

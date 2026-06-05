@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELECTROLANDIA · Panel administrativo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/base.css">
+<link rel="stylesheet" href="../styles/components.css">
+<link rel="stylesheet" href="../styles/app.css">
+<style>
+  .admin { display: grid; grid-template-columns: 232px 1fr; min-height: 100vh; }
+  .admin-side { background: var(--carbon-900); color: var(--text-on-dark); padding: var(--space-5); position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; gap: 4px; }
+  .admin-side .brand { color: #fff; margin-bottom: var(--space-6); }
+  .admin-side .nav-link { color: var(--text-on-dark-muted); width: 100%; }
+  .admin-side .nav-link:hover { background: rgba(198,245,66,.08); color: #fff; }
+  .admin-side .nav-link.active { background: var(--lime-400); color: var(--carbon-900); }
+  .admin-side .grp { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--slate-400); padding: 14px 12px 4px; font-weight: 600; }
+  .admin-main { min-width: 0; background: var(--bg-page); }
+  .admin-top { height: var(--header-h); display: flex; align-items: center; gap: var(--space-4); padding-inline: var(--space-7); background: var(--bg-surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 30; }
+  .admin-body { padding: var(--space-7); }
+  @media (max-width: 860px) { .admin { grid-template-columns: 1fr; } .admin-side { display: none; } }
+</style>
+</head>
+<body>
+<div class="admin" data-screen-label="Panel Admin">
+
+  <!-- SIDEBAR -->
+  <aside class="admin-side">
+    <a class="brand" href="Home.html"><span class="brand-mark"><svg class="icon"><use href="#i-bolt"></use></svg></span> ELECTROLANDIA</a>
+    <span class="grp">Operación</span>
+    <a class="nav-link active"><svg class="icon"><use href="#i-grid"></use></svg> Reservas del día</a>
+    <a class="nav-link"><svg class="icon"><use href="#i-calendar"></use></svg> Calendario</a>
+    <a class="nav-link"><svg class="icon"><use href="#i-station"></use></svg> Punto de carga</a>
+    <span class="grp">Cuenta</span>
+    <a class="nav-link"><svg class="icon"><use href="#i-user"></use></svg> Clientes</a>
+    <a class="nav-link"><svg class="icon"><use href="#i-settings"></use></svg> Configuración</a>
+    <div style="margin-top:auto">
+      <a class="nav-link" href="Home.html"><svg class="icon"><use href="#i-home"></use></svg> Ver sitio público</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="admin-main">
+    <div class="admin-top">
+      <div>
+        <div class="t-label">Vie 12 Junio 2026</div>
+        <div class="t-h4" style="margin-top:-2px">Reservas del día</div>
+      </div>
+      <div class="grow"></div>
+      <div class="segment" id="viewSeg"><button class="active">Hoy</button><button>Próximas</button><button>Histórico</button></div>
+      <button class="btn btn-primary btn-sm"><svg class="icon"><use href="#i-plus"></use></svg> Nueva reserva</button>
+    </div>
+
+    <div class="admin-body">
+
+      <!-- SUMMARY -->
+      <div class="grid-auto cols-4" style="margin-bottom:var(--space-6)">
+        <div class="card"><div class="row between" style="align-items:flex-start"><div class="stat"><span class="stat-label">Reservas hoy</span><span class="stat-value data" id="kpiTotal">0</span></div><span class="icon-tile plain"><svg class="icon"><use href="#i-calendar"></use></svg></span></div></div>
+        <div class="card"><div class="row between" style="align-items:flex-start"><div class="stat"><span class="stat-label">Confirmadas</span><span class="stat-value data" style="color:var(--success-text)" id="kpiConf">0</span></div><span class="icon-tile"><svg class="icon"><use href="#i-check-circle"></use></svg></span></div></div>
+        <div class="card"><div class="row between" style="align-items:flex-start"><div class="stat"><span class="stat-label">En curso</span><span class="stat-value data" style="color:var(--accent-text)" id="kpiLive">0</span></div><span class="icon-tile accent"><svg class="icon"><use href="#i-battery-charging"></use></svg></span></div></div>
+        <div class="card"><div class="row between" style="align-items:flex-start"><div class="stat"><span class="stat-label">Energía estimada</span><span class="stat-value data">88<span class="stat-unit">kWh</span></span></div><span class="icon-tile dark"><svg class="icon"><use href="#i-bolt"></use></svg></span></div></div>
+      </div>
+
+      <!-- TOOLBAR -->
+      <div class="toolbar" style="margin-bottom:var(--space-4)">
+        <div class="search"><span class="input-icon"><svg class="icon icon-sm"><use href="#i-search"></use></svg></span><input class="input" id="searchInput" placeholder="Buscar por nombre, placa o WhatsApp…"></div>
+        <div class="row-wrap" style="gap:var(--space-2)" id="filters">
+          <button class="filter-chip active" data-f="all"><svg class="icon icon-sm"><use href="#i-filter"></use></svg> Todas</button>
+          <button class="filter-chip" data-f="charging">En curso</button>
+          <button class="filter-chip" data-f="success">Confirmadas</button>
+          <button class="filter-chip" data-f="info">Finalizadas</button>
+          <button class="filter-chip" data-f="danger">Canceladas</button>
+        </div>
+      </div>
+
+      <!-- TABLE -->
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Cliente</th><th>WhatsApp</th><th>Correo</th><th>Vehículo</th><th>Conector</th><th>Fecha · Hora</th><th>Estado</th><th></th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <div class="empty" id="emptyState" style="display:none"><span class="icon-tile plain"><svg class="icon"><use href="#i-search"></use></svg></span><p class="t-sm t-muted" style="margin-top:10px">Sin resultados para tu búsqueda.</p></div>
+      </div>
+      <p class="t-xs t-muted" style="margin-top:var(--space-4)" id="count"></p>
+
+    </div>
+  </div>
+</div>
+
+<script src="../assets/icons.js"></script>
+<script>
+(function () {
+  var DATA = [
+    { n:'Camila Restrepo', i:'CR', wa:'300 123 4567', mail:'camila@correo.com', plate:'ABC-123', car:'Renault Zoe', conn:'J1772', date:'12 Jun · 14:30', st:'charging' },
+    { n:'Julián Mejía', i:'JM', wa:'301 555 7788', mail:'julian@correo.com', plate:'XYZ-89D', car:'BYD Dolphin', conn:'Tipo 2', date:'12 Jun · 15:30', st:'success' },
+    { n:'Valeria Lozano', i:'VL', wa:'312 444 2211', mail:'valeria@correo.com', plate:'GHT-45F', car:'Volvo EX30', conn:'J1772', date:'12 Jun · 16:00', st:'success' },
+    { n:'Andrés Ríos', i:'AR', wa:'300 998 1100', mail:'andres@correo.com', plate:'PLK-770', car:'Kia Niro', conn:'GB/T-AC', date:'12 Jun · 09:00', st:'info' },
+    { n:'Sara Nieto', i:'SN', wa:'315 222 6644', mail:'sara@correo.com', plate:'RTY-128', car:'Tesla Model 3', conn:'J1772', date:'12 Jun · 11:00', st:'noshow' },
+    { n:'Mateo Gómez', i:'MG', wa:'318 707 3030', mail:'mateo@correo.com', plate:'FDC-902', car:'Nissan Leaf', conn:'Tipo 2', date:'12 Jun · 17:30', st:'success' },
+    { n:'Daniela Cruz', i:'DC', wa:'304 661 8842', mail:'daniela@correo.com', plate:'KWQ-551', car:'JAC E-JS4', conn:'J1772', date:'12 Jun · 13:00', st:'charging' },
+    { n:'Felipe Arango', i:'FA', wa:'310 880 1245', mail:'felipe@correo.com', plate:'BNM-334', car:'MG ZS EV', conn:'GB/T-AC', date:'12 Jun · 18:00', st:'danger' },
+    { n:'Laura Quintero', i:'LQ', wa:'320 445 9087', mail:'laura@correo.com', plate:'HRT-218', car:'Chevrolet Bolt', conn:'J1772', date:'12 Jun · 10:00', st:'info' }
+  ];
+  var BADGE = {
+    charging: '<span class="badge badge-charging"><span class="dot"></span> Cargando</span>',
+    success:  '<span class="badge badge-success"><span class="dot"></span> Confirmada</span>',
+    info:     '<span class="badge badge-info"><svg class="icon"><use href="#i-check-circle"></use></svg> Finalizada</span>',
+    danger:   '<span class="badge badge-danger"><svg class="icon"><use href="#i-x"></use></svg> Cancelada</span>',
+    noshow:   '<span class="badge badge-noshow"><svg class="icon"><use href="#i-ban"></use></svg> No asistió</span>'
+  };
+  var CONN_BADGE = { 'J1772':'badge-neutral', 'Tipo 2':'badge-info', 'GB/T-AC':'badge-lime' };
+
+  var filter = 'all', query = '';
+  var $ = function (id) { return document.getElementById(id); };
+
+  function rowHtml(r) {
+    return '<tr>' +
+      '<td><div class="cust"><span class="avatar">' + r.i + '</span><div><div style="font-weight:600;color:var(--text-strong)">' + r.n + '</div></div></div></td>' +
+      '<td><span class="mono">' + r.wa + '</span></td>' +
+      '<td><span class="t-sm t-muted">' + r.mail + '</span></td>' +
+      '<td><span class="mono">' + r.plate + '</span><div class="t-xs t-muted">' + r.car + '</div></td>' +
+      '<td><span class="badge ' + CONN_BADGE[r.conn] + '">' + r.conn + '</span></td>' +
+      '<td><span class="mono">' + r.date + '</span></td>' +
+      '<td>' + BADGE[r.st] + '</td>' +
+      '<td><div class="row" style="gap:2px"><button class="icon-btn" title="Editar"><svg class="icon icon-sm"><use href="#i-edit"></use></svg></button><button class="icon-btn danger" title="Eliminar"><svg class="icon icon-sm"><use href="#i-trash"></use></svg></button></div></td>' +
+    '</tr>';
+  }
+
+  function render() {
+    var q = query.trim().toLowerCase();
+    var list = DATA.filter(function (r) {
+      var matchF = (filter === 'all') || (r.st === filter);
+      var matchQ = !q || (r.n + ' ' + r.plate + ' ' + r.wa + ' ' + r.mail + ' ' + r.car).toLowerCase().indexOf(q) !== -1;
+      return matchF && matchQ;
+    });
+    $('rows').innerHTML = list.map(rowHtml).join('');
+    $('emptyState').style.display = list.length ? 'none' : 'block';
+    $('count').textContent = 'Mostrando ' + list.length + ' de ' + DATA.length + ' reservas';
+    // KPIs (always full-day totals)
+    $('kpiTotal').textContent = String(DATA.length).padStart(2,'0');
+    $('kpiConf').textContent = String(DATA.filter(function(r){return r.st==='success';}).length).padStart(2,'0');
+    $('kpiLive').textContent = String(DATA.filter(function(r){return r.st==='charging';}).length).padStart(2,'0');
+  }
+
+  $('searchInput').addEventListener('input', function (e) { query = e.target.value; render(); });
+  $('filters').addEventListener('click', function (e) {
+    var b = e.target.closest('.filter-chip'); if (!b) return;
+    document.querySelectorAll('#filters .filter-chip').forEach(function (c) { c.classList.remove('active'); });
+    b.classList.add('active'); filter = b.dataset.f; render();
+  });
+  $('viewSeg').addEventListener('click', function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    document.querySelectorAll('#viewSeg button').forEach(function (c) { c.classList.remove('active'); });
+    b.classList.add('active');
+  });
+  // Row action demo feedback
+  $('rows').addEventListener('click', function (e) {
+    var del = e.target.closest('.icon-btn.danger');
+    if (del) { var tr = del.closest('tr'); tr.style.transition = 'opacity .2s, transform .2s'; tr.style.opacity = '0'; tr.style.transform = 'translateX(8px)'; }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

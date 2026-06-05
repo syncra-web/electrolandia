@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELECTROLANDIA · Carga tu EV en Cali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles/tokens.css">
+<link rel="stylesheet" href="../styles/base.css">
+<link rel="stylesheet" href="../styles/components.css">
+<link rel="stylesheet" href="../styles/app.css">
+</head>
+<body>
+<div class="app" data-screen-label="Home">
+
+  <!-- NAV -->
+  <header class="nav">
+    <a class="brand" href="Home.html"><span class="brand-mark"><svg class="icon"><use href="#i-bolt"></use></svg></span> ELECTROLANDIA</a>
+    <nav class="nav-links grow" style="justify-content:center">
+      <a class="nav-link active" href="Home.html"><svg class="icon"><use href="#i-home"></use></svg> Inicio</a>
+      <a class="nav-link" href="Reserva.html"><svg class="icon"><use href="#i-calendar"></use></svg> Reservar</a>
+      <a class="nav-link" href="Panel Admin.html"><svg class="icon"><use href="#i-grid"></use></svg> Admin</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="Reserva.html"><svg class="icon"><use href="#i-bolt"></use></svg> Reservar carga</a>
+  </header>
+
+  <main class="app-main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid-bg"></div>
+      <div class="container section" style="position:relative">
+        <div class="grid-auto" style="grid-template-columns:1.1fr 0.9fr;gap:var(--space-9);align-items:center">
+          <div class="rise">
+            <span class="badge badge-lime" style="margin-bottom:18px"><span class="dot"></span> Punto activo · Ciudad Jardín</span>
+            <h1 class="t-display text-balance" style="margin-bottom:18px">Reserva tu punto de <span style="color:var(--lime-700)">carga eléctrica</span> en Cali.</h1>
+            <p class="t-body-lg t-muted text-pretty" style="max-width:52ch">Energía limpia para tu vehículo, sin filas ni complicaciones. Elige día y hora, deja tus datos y listo: tu bahía te espera.</p>
+            <div class="row-wrap" style="gap:var(--space-3);margin-top:28px">
+              <a class="btn btn-primary btn-lg" href="Reserva.html"><svg class="icon"><use href="#i-calendar-check"></use></svg> Reservar ahora</a>
+              <a class="btn btn-maps btn-lg" href="https://maps.google.com" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"></use></svg> Ver ubicación</a>
+            </div>
+            <div class="row-wrap" style="gap:var(--space-7);margin-top:32px">
+              <div><div class="t-data" style="font-size:26px;font-weight:700;color:var(--text-strong)">11.0<span style="font-size:15px;color:var(--accent-text)"> kW</span></div><div class="t-xs t-muted">Potencia máx.</div></div>
+              <div style="width:1px;height:38px;background:var(--border)"></div>
+              <div><div class="t-data" style="font-size:26px;font-weight:700;color:var(--text-strong)">3</div><div class="t-xs t-muted">Conectores</div></div>
+              <div style="width:1px;height:38px;background:var(--border)"></div>
+              <div><div class="t-data" style="font-size:26px;font-weight:700;color:var(--text-strong)">7&nbsp;días</div><div class="t-xs t-muted">Disponible</div></div>
+            </div>
+          </div>
+
+          <!-- Hero charging card -->
+          <div class="card card-dark rise" style="animation-delay:.08s;position:relative;overflow:hidden">
+            <div style="position:absolute;inset:0;opacity:.4;background-image:linear-gradient(rgba(198,245,66,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(198,245,66,.12) 1px,transparent 1px);background-size:24px 24px;mask-image:radial-gradient(circle at 85% 12%,#000,transparent 75%)"></div>
+            <div style="position:relative">
+              <div class="row between">
+                <span class="badge badge-charging"><span class="dot"></span> Cargador activo</span>
+                <span class="t-data" style="color:var(--text-on-dark-muted)">EV-CALI-03</span>
+              </div>
+              <div style="margin:26px 0 8px">
+                <div class="t-label" style="color:var(--lime-400)">Sesión en curso</div>
+                <div class="power" style="color:var(--cyan-400);font-size:64px;line-height:1;margin-top:6px">7.4<span class="unit" style="font-size:24px">kW</span></div>
+              </div>
+              <div class="flow-line" style="margin:18px 0"></div>
+              <div class="row between" style="margin-top:18px">
+                <div><div class="t-label" style="color:var(--text-on-dark-muted)">Batería</div><div class="t-data" style="color:#fff;font-size:18px">62%</div></div>
+                <div><div class="t-label" style="color:var(--text-on-dark-muted)">Tiempo</div><div class="t-data" style="color:#fff;font-size:18px">00:48</div></div>
+                <div><div class="t-label" style="color:var(--text-on-dark-muted)">Conector</div><div class="t-data" style="color:var(--lime-400);font-size:18px">J1772</div></div>
+              </div>
+              <div style="height:10px;border-radius:999px;background:rgba(255,255,255,.08);margin-top:20px;overflow:hidden"><div style="height:100%;width:62%;border-radius:999px;background:linear-gradient(90deg,var(--cyan-500),var(--lime-400))"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POINT INFO -->
+    <section class="container section">
+      <div class="row between" style="margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-3)">
+        <div>
+          <span class="eyebrow"><svg class="icon"><use href="#i-station"></use></svg> Nuestro punto de carga</span>
+          <h2 class="t-h1" style="margin-top:8px">Todo lo que necesitas saber</h2>
+        </div>
+        <span class="badge badge-success"><span class="dot"></span> Abierto · 6:00 – 21:00</span>
+      </div>
+
+      <div class="grid-auto cols-4">
+        <div class="card card-hover">
+          <div class="card-head"><span class="icon-tile"><svg class="icon"><use href="#i-pin"></use></svg></span><div class="grow"><div class="card-title">Ubicación</div></div></div>
+          <p class="t-sm" style="color:var(--text-default)">Cra. 100 #16-20, Ciudad Jardín, Cali. Parqueadero cubierto · Bahía 3.</p>
+          <a class="btn btn-maps btn-sm btn-block" href="https://maps.google.com" target="_blank" rel="noopener" style="margin-top:14px"><svg class="icon"><use href="#i-pin"></use></svg> Abrir en Maps</a>
+        </div>
+        <div class="card card-hover">
+          <div class="card-head"><span class="icon-tile accent"><svg class="icon"><use href="#i-battery-charging"></use></svg></span><div class="grow"><div class="card-title">Potencia</div></div></div>
+          <div class="power" style="font-size:40px;margin:4px 0">11.0<span class="unit">kW</span></div>
+          <p class="t-sm t-muted">Cargador AC · ideal para recarga cómoda en estancias de 1–3 h.</p>
+        </div>
+        <div class="card card-hover">
+          <div class="card-head"><span class="icon-tile"><svg class="icon"><use href="#i-ev-connector"></use></svg></span><div class="grow"><div class="card-title">Conectores</div></div></div>
+          <div class="kv"><span class="k">J1772 · Tipo 1</span><span class="badge badge-success">Estándar</span></div>
+          <div class="kv"><span class="k">Tipo 2</span><span class="badge badge-lime">Adaptador</span></div>
+          <div class="kv"><span class="k">GB/T-AC</span><span class="badge badge-lime">Adaptador</span></div>
+        </div>
+        <div class="card card-hover">
+          <div class="card-head"><span class="icon-tile"><svg class="icon"><use href="#i-clock"></use></svg></span><div class="grow"><div class="card-title">Cómo funciona</div></div></div>
+          <ol class="t-sm" style="color:var(--text-default);padding-left:18px;margin:0;display:grid;gap:8px">
+            <li>Reserva tu día y hora.</li>
+            <li>Llega y conéctate.</li>
+            <li>Inicia la carga.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section class="container" style="padding-bottom:var(--space-11)">
+      <div class="card" style="background:var(--carbon-900);border:0;padding:var(--space-9);position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;opacity:.5;background-image:linear-gradient(rgba(198,245,66,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(198,245,66,.1) 1px,transparent 1px);background-size:32px 32px;mask-image:radial-gradient(circle at 90% 50%,#000,transparent 70%)"></div>
+        <div class="row between" style="position:relative;flex-wrap:wrap;gap:var(--space-6)">
+          <div>
+            <span class="badge badge-lime"><svg class="icon"><use href="#i-leaf"></use></svg> Movilidad limpia</span>
+            <h2 class="t-h1" style="color:#fff;margin:14px 0 8px;max-width:18ch">¿Listo para cargar? Tu bahía está a un toque.</h2>
+            <p class="t-muted" style="color:var(--text-on-dark-muted);max-width:46ch">Reserva en menos de un minuto. Te confirmamos por WhatsApp.</p>
+          </div>
+          <a class="btn btn-primary btn-lg" href="Reserva.html"><svg class="icon"><use href="#i-bolt"></use></svg> Reservar mi carga <svg class="icon"><use href="#i-arrow-right"></use></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid var(--border);background:var(--bg-surface)">
+    <div class="container" style="padding-block:var(--space-6)">
+      <div class="row between" style="flex-wrap:wrap;gap:var(--space-3)">
+        <div class="brand" style="font-size:15px"><span class="brand-mark" style="width:28px;height:28px;border-radius:8px"><svg class="icon icon-sm"><use href="#i-bolt"></use></svg></span> ELECTROLANDIA</div>
+        <p class="t-xs t-muted">Carga EV · Cali, Colombia · <a href="../ELECTROLANDIA Design System.html" style="color:var(--lime-800);font-weight:600">Ver Design System</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE TAB BAR -->
+  <nav class="tabbar" style="position:sticky;bottom:0;z-index:40" id="mobileTabs">
+    <a class="tabbar-item active" href="Home.html"><svg class="icon"><use href="#i-home"></use></svg> Inicio</a>
+    <a class="tabbar-item" href="Reserva.html"><svg class="icon"><use href="#i-calendar"></use></svg> Reservar</a>
+    <a class="tabbar-item" href="Panel Admin.html"><svg class="icon"><use href="#i-grid"></use></svg> Admin</a>
+  </nav>
+</div>
+
+<script src="../assets/icons.js"></script>
+<script>
+  // Hide mobile tabbar on wide screens
+  function syncTabs(){ document.getElementById('mobileTabs').style.display = window.innerWidth > 760 ? 'none' : 'flex'; }
+  syncTabs(); window.addEventListener('resize', syncTabs);
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+/* ============================================================
+   ELECTROLANDIA · Base
+   Reset, document defaults, typography base, helpers.
+   Requires: tokens.css
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+* { margin: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text-default);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01" 1, "cv11" 1;
+}
+
+img, svg, video { display: block; max-width: 100%; }
+
+button, input, select, textarea { font: inherit; color: inherit; }
+
+a { color: inherit; text-decoration: none; }
+
+::selection { background: var(--lime-300); color: var(--carbon-900); }
+
+:focus-visible { outline: none; }
+
+/* ---- Headings ---------------------------------------------------- */
+h1, h2, h3, h4, h5 { font-family: var(--font-display); font-weight: var(--fw-bold); color: var(--text-strong); }
+
+.t-display { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-display); line-height: var(--lh-display); letter-spacing: var(--ls-display); color: var(--text-strong); }
+.t-h1 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--ls-h1); color: var(--text-strong); }
+.t-h2 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: var(--ls-h2); color: var(--text-strong); }
+.t-h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h3); line-height: var(--lh-h3); letter-spacing: var(--ls-h3); color: var(--text-strong); }
+.t-h4 { font-family: var(--font-display); font-weight: 600; font-size: var(--fs-h4); line-height: var(--lh-h4); letter-spacing: var(--ls-h4); color: var(--text-strong); }
+
+.t-body-lg { font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); }
+.t-body { font-size: var(--fs-body); line-height: var(--lh-body); }
+.t-sm { font-size: var(--fs-sm); line-height: var(--lh-sm); }
+.t-xs { font-size: var(--fs-xs); line-height: var(--lh-xs); }
+
+.t-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.t-data {
+  font-family: var(--font-mono);
+  font-size: var(--fs-data);
+  letter-spacing: var(--ls-data);
+  font-feature-settings: "tnum" 1;
+}
+
+.t-muted { color: var(--text-muted); }
+.t-subtle { color: var(--text-subtle); }
+.t-strong { color: var(--text-strong); }
+.t-lime  { color: var(--primary-text); }
+.t-accent { color: var(--accent-text); }
+.text-balance { text-wrap: balance; }
+.text-pretty { text-wrap: pretty; }
+
+/* ---- Layout helpers ---------------------------------------------- */
+.container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--space-6); }
+.container-narrow { width: 100%; max-width: var(--container-narrow); margin-inline: auto; padding-inline: var(--space-6); }
+
+.stack > * + * { margin-top: var(--space-4); }
+.row { display: flex; align-items: center; gap: var(--space-3); }
+.row-wrap { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); }
+.col { display: flex; flex-direction: column; }
+.between { justify-content: space-between; }
+.center { justify-content: center; align-items: center; }
+.grow { flex: 1 1 auto; }
+
+/* ---- Energy flow line (decorative, subtle) ----------------------- */
+.flow-line {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--line-300) 12%,
+    var(--line-300) 88%,
+    transparent 100%);
+  position: relative;
+  overflow: hidden;
+}
+.flow-line::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: 28%;
+  background: linear-gradient(90deg, transparent, var(--lime-400), transparent);
+  animation: flow 2.8s var(--ease-in-out) infinite;
+}
+@keyframes flow { from { left: -30%; } to { left: 100%; } }
+@media (prefers-reduced-motion: reduce) { .flow-line::after { animation: none; opacity: 0; } }
+
+/* Circuit dot — small geometric energy node */
+.node-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--lime-400);
+  box-shadow: 0 0 0 4px var(--primary-soft);
+}
+
+.divider { height: 1px; background: var(--border); border: 0; }
+
+/* Visually-hidden */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}

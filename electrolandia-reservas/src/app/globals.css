@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   El design system (tokens.css → base.css → components.css → app.css)
+   se importa DESPUÉS de Tailwind en layout.tsx, así que manda en color,
+   tipografía, fondo y reset. Acá solo viven puentes y ajustes propios.
+   ------------------------------------------------------------------ */
+
+/* Puente: variables legacy de la app mapeadas a tokens del DS.
+   Mantiene alineado cualquier markup viejo mientras se migra a clases del DS. */
+:root {
+  --ink: var(--text-strong);
+  --verde: var(--primary);
+  --verde-dark: var(--primary-active);
+  --crema: var(--bg-page);
+}
+
+/* Inputs de fecha/hora consistentes en móvil */
+input[type="date"],
+input[type="time"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Tab bar inferior: pegada abajo y SOLO en móvil (≤760px).
+   En desktop manda la barra superior (.nav). */
+.tabbar {
+  position: sticky;
+  bottom: 0;
+  z-index: 40;
+}
+@media (min-width: 761px) {
+  /* `.app .tabbar` (0,2,0) gana sobre el `.tabbar { display:flex }` del DS
+     (0,1,0), que se importa después de este archivo. */
+  .app .tabbar {
+    display: none;
+  }
+}

@@ -1,0 +1,13 @@
+/* ------------------------------------------------------------------
+   Puente de tipografía (específico de la app — NO es parte del DS).
+   Enlaza los tokens del DS a las fuentes self-hosted por next/font.
+   Se importa DESPUÉS de tokens.css para que GANE: así la app usa la
+   fuente real servida por Next (no la del sistema). En producción
+   (Vercel) sin estas fuentes instaladas, esto es lo que evita caer a
+   system-ui. Si recopiás el DS a src/styles/, NO pises este archivo.
+   ------------------------------------------------------------------ */
+:root {
+  --font-display: var(--font-space-grotesk), "Space Grotesk", system-ui, sans-serif;
+  --font-body: var(--font-hanken), "Hanken Grotesk", system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+}

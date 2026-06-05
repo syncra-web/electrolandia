@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ELECTROLANDIA · Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+<link rel="stylesheet" href="styles/guide.css">
+</head>
+<body>
+<div class="guide">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="guide-side">
+    <div class="brand">
+      <span class="brand-mark"><svg class="icon"><use href="#i-bolt"></use></svg></span>
+      ELECTROLANDIA
+    </div>
+    <div class="brand-tag">Design System · v1.0 · Carga EV · Cali</div>
+    <nav class="guide-nav" id="guideNav">
+      <span class="grp">Fundamentos</span>
+      <a href="#concepto" class="active"><svg class="icon icon-sm"><use href="#i-sparkle"></use></svg> Concepto</a>
+      <a href="#color"><svg class="icon icon-sm"><use href="#i-leaf"></use></svg> Color</a>
+      <a href="#lime-guide"><svg class="icon icon-sm"><use href="#i-bolt"></use></svg> Uso del lima</a>
+      <a href="#tipografia"><svg class="icon icon-sm"><use href="#i-list"></use></svg> Tipografía</a>
+      <a href="#espaciado"><svg class="icon icon-sm"><use href="#i-grid"></use></svg> Espaciado</a>
+      <a href="#radios"><svg class="icon icon-sm"><use href="#i-grid"></use></svg> Radios y sombras</a>
+      <a href="#iconografia"><svg class="icon icon-sm"><use href="#i-station"></use></svg> Iconografía</a>
+      <a href="#grafica"><svg class="icon icon-sm"><use href="#i-route"></use></svg> Estilo gráfico</a>
+      <span class="grp">Componentes</span>
+      <a href="#botones"><svg class="icon icon-sm"><use href="#i-plus"></use></svg> Botones</a>
+      <a href="#inputs"><svg class="icon icon-sm"><use href="#i-edit"></use></svg> Inputs y formularios</a>
+      <a href="#tarjetas"><svg class="icon icon-sm"><use href="#i-grid"></use></svg> Tarjetas</a>
+      <a href="#calendario"><svg class="icon icon-sm"><use href="#i-calendar"></use></svg> Calendario</a>
+      <a href="#badges"><svg class="icon icon-sm"><use href="#i-tag"></use></svg> Badges y estados</a>
+      <a href="#navegacion"><svg class="icon icon-sm"><use href="#i-menu"></use></svg> Navegación</a>
+      <a href="#tabla"><svg class="icon icon-sm"><use href="#i-list"></use></svg> Tabla admin</a>
+      <span class="grp">Aplicación</span>
+      <a href="#responsive"><svg class="icon icon-sm"><use href="#i-gauge"></use></svg> Responsive</a>
+      <a href="#pantallas"><svg class="icon icon-sm"><use href="#i-station"></use></svg> Pantallas</a>
+    </nav>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main class="guide-main">
+
+    <!-- COVER -->
+    <section class="cover" id="top">
+      <div class="cover-grid-bg"></div>
+      <span class="kicker"><span class="node-dot"></span> Sistema visual de producto</span>
+      <h1>Carga eléctrica,<br>reservada en <span class="hl">segundos.</span></h1>
+      <p>El lenguaje de diseño de <b style="color:var(--white)">ELECTROLANDIA</b> — una plataforma de reserva de puntos de carga para vehículos eléctricos en Cali. Moderno, limpio y tecnológico, con la energía del verde lima eléctrico y la confianza de los neutros carbón.</p>
+      <div class="meta-row">
+        <span class="meta-pill"><svg class="icon"><use href="#i-bolt"></use></svg> 11.0 kW máx</span>
+        <span class="meta-pill"><svg class="icon"><use href="#i-ev-connector"></use></svg> J1772 · Tipo 2 · GB/T-AC</span>
+        <span class="meta-pill"><svg class="icon"><use href="#i-pin"></use></svg> Cali, Colombia</span>
+        <span class="meta-pill"><svg class="icon"><use href="#i-leaf"></use></svg> Movilidad limpia</span>
+      </div>
+    </section>
+
+    <!-- CONCEPTO -->
+    <section class="guide-section" id="concepto">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-sparkle"></use></svg> Concepto visual</span>
+      <h2 class="t-h1 text-balance">Energía limpia con cara amigable</h2>
+      <p class="section-desc">No es una marca corporativa y fría, ni un formulario genérico. Es una startup de carga eléctrica: precisa como la tecnología que la mueve, pero cercana y fácil como pedir un domicilio. El verde lima aporta la chispa de energía; los neutros carbón dan seriedad y confianza.</p>
+      <div class="grid-auto cols-4" style="margin-top:var(--space-7)">
+        <div class="card">
+          <div class="icon-tile"><svg class="icon"><use href="#i-bolt"></use></svg></div>
+          <h3 class="card-title" style="margin-top:14px">Eléctrico</h3>
+          <p class="t-sm t-muted">El lima señala energía y acción. Aparece donde hay movimiento: cargar, reservar, confirmar.</p>
+        </div>
+        <div class="card">
+          <div class="icon-tile plain"><svg class="icon"><use href="#i-gauge"></use></svg></div>
+          <h3 class="card-title" style="margin-top:14px">Claro</h3>
+          <p class="t-sm t-muted">Fondos humo, mucho aire, jerarquía obvia. La información de la reserva se lee de un vistazo.</p>
+        </div>
+        <div class="card">
+          <div class="icon-tile accent"><svg class="icon"><use href="#i-battery-charging"></use></svg></div>
+          <h3 class="card-title" style="margin-top:14px">Tecnológico</h3>
+          <p class="t-sm t-muted">Datos en mono (kW, horas, placas), líneas de flujo sutiles y un acento cian para la energía viva.</p>
+        </div>
+        <div class="card">
+          <div class="icon-tile dark"><svg class="icon"><use href="#i-shield"></use></svg></div>
+          <h3 class="card-title" style="margin-top:14px">Confiable</h3>
+          <p class="t-sm t-muted">Estados explícitos, mensajes honestos y contraste fuerte. El usuario siempre sabe qué pasa.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLOR -->
+    <section class="guide-section" id="color">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-leaf"></use></svg> Paleta de color</span>
+      <h2 class="t-h1">Color con roles claros</h2>
+      <p class="section-desc">Cada color tiene un trabajo. El lima manda en las acciones; los neutros sostienen la interfaz; el cian solo aparece para datos de energía; los semánticos comunican estado.</p>
+
+      <h3 class="subhead">Primario · Lime Electric</h3>
+      <div class="scale-row" style="margin-bottom:var(--space-3)">
+        <div class="scale-cell" style="background:var(--lime-50);color:#5c6b1a">50</div>
+        <div class="scale-cell" style="background:var(--lime-100);color:#5c6b1a">100</div>
+        <div class="scale-cell" style="background:var(--lime-200);color:#4d6b0f">200</div>
+        <div class="scale-cell" style="background:var(--lime-300);color:#36490c">300</div>
+        <div class="scale-cell" style="background:var(--lime-400);color:#16210a">400</div>
+        <div class="scale-cell" style="background:var(--lime-500);color:#16210a">500</div>
+        <div class="scale-cell" style="background:var(--lime-600);color:#fff">600</div>
+        <div class="scale-cell" style="background:var(--lime-700);color:#fff">700</div>
+        <div class="scale-cell" style="background:var(--lime-800);color:#fff">800</div>
+        <div class="scale-cell" style="background:var(--lime-900);color:#fff">900</div>
+      </div>
+      <div class="grid-auto cols-4">
+        <div class="swatch"><div class="chip" style="background:var(--lime-400)"></div><div class="meta"><div class="name">Lime Electric</div><div class="hex">#C6F542</div><div class="token">--primary / --lime-400</div><div class="role">CTAs, estados activos, detalles de energía</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--lime-100)"></div><div class="meta"><div class="name">Lime Soft</div><div class="hex">#EBFAC4</div><div class="token">--primary-soft</div><div class="role">Superficies tintadas, badges, hovers</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--lime-800)"></div><div class="meta"><div class="name">Lime Ink</div><div class="hex">#4D6B0F</div><div class="token">--primary-text</div><div class="role">Lima como texto sobre fondo claro (AA)</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--green-soft)"></div><div class="meta"><div class="name">Green Soft</div><div class="hex">#EDF6DC</div><div class="token">--green-soft</div><div class="role">Fondos amplios suaves, hero claro</div></div></div>
+      </div>
+
+      <h3 class="subhead">Neutros · Carbón → Humo</h3>
+      <div class="grid-auto cols-4">
+        <div class="swatch"><div class="chip" style="background:var(--carbon-900)"></div><div class="meta"><div class="name">Negro Carbón</div><div class="hex">#11150F</div><div class="token">--carbon-900</div><div class="role">Texto fuerte, nav, paneles oscuros</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--graphite-700)"></div><div class="meta"><div class="name">Gris Grafito</div><div class="hex">#232A20</div><div class="token">--graphite-700</div><div class="role">Texto por defecto</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--slate-500)"></div><div class="meta"><div class="name">Slate</div><div class="hex">#5A6452</div><div class="token">--text-muted</div><div class="role">Texto secundario, ayudas</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--line-200)"></div><div class="meta"><div class="name">Línea</div><div class="hex">#E5E9DC</div><div class="token">--border</div><div class="role">Bordes, divisores</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--mist-150);"></div><div class="meta"><div class="name">Gris Claro</div><div class="hex">#EEF1E7</div><div class="token">--bg-sunken</div><div class="role">Superficies hundidas, campos inactivos</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--smoke-100)"></div><div class="meta"><div class="name">Blanco Humo</div><div class="hex">#F4F7EE</div><div class="token">--bg-page</div><div class="role">Fondo de página</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--green-deep)"></div><div class="meta"><div class="name">Verde Oscuro</div><div class="hex">#1C3326</div><div class="token">--green-deep</div><div class="role">Paneles premium, tarjetas destacadas</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--white);border-bottom:1px solid var(--border)"></div><div class="meta"><div class="name">Blanco</div><div class="hex">#FFFFFF</div><div class="token">--bg-surface</div><div class="role">Tarjetas, modales, inputs</div></div></div>
+      </div>
+
+      <h3 class="subhead">Acento · Electric Cyan <span class="badge badge-charging" style="margin-left:8px"><span class="dot"></span> solo datos de energía</span></h3>
+      <div class="grid-auto cols-4">
+        <div class="swatch"><div class="chip" style="background:var(--cyan-500)"></div><div class="meta"><div class="name">Electric Cyan</div><div class="hex">#14C2C9</div><div class="token">--accent</div><div class="role">kW, carga en vivo, líneas de flujo</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--cyan-100)"></div><div class="meta"><div class="name">Cyan Soft</div><div class="hex">#CFF7F6</div><div class="token">--accent-soft</div><div class="role">Badge "cargando", fondos de dato</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--cyan-700)"></div><div class="meta"><div class="name">Cyan Ink</div><div class="hex">#0B7176</div><div class="token">--accent-text</div><div class="role">Texto de dato sobre fondo claro</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--green-deep);display:grid;place-items:center"><span class="power" style="color:var(--cyan-400);font-size:22px">11.0<span class="unit">kW</span></span></div><div class="meta"><div class="name">En contexto</div><div class="hex">power readout</div><div class="role">El cian brilla sobre oscuro</div></div></div>
+      </div>
+
+      <h3 class="subhead">Semánticos · Ciclo de la reserva</h3>
+      <div class="grid-auto cols-3">
+        <div class="swatch"><div class="chip" style="background:var(--success)"></div><div class="meta"><div class="name">Success · Confirmado</div><div class="hex">#2FA84F</div><div class="token">--success</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--warning)"></div><div class="meta"><div class="name">Warning · Ocupado</div><div class="hex">#E8A317</div><div class="token">--warning</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--danger)"></div><div class="meta"><div class="name">Danger · Cancelado</div><div class="hex">#E5484D</div><div class="token">--danger</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--info)"></div><div class="meta"><div class="name">Info · Finalizado</div><div class="hex">#4E7BD6</div><div class="token">--info</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--noshow)"></div><div class="meta"><div class="name">No asistió</div><div class="hex">#B26A3C</div><div class="token">--noshow</div></div></div>
+        <div class="swatch"><div class="chip" style="background:var(--charging)"></div><div class="meta"><div class="name">Cargando (cian)</div><div class="hex">#14C2C9</div><div class="token">--charging</div></div></div>
+      </div>
+    </section>
+
+    <!-- LIME GUIDE -->
+    <section class="guide-section" id="lime-guide">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-bolt"></use></svg> Guía de uso del verde lima</span>
+      <h2 class="t-h1">El lima es energía, no fondo</h2>
+      <p class="section-desc">El verde lima es brillante y puede cansar si se abusa. Trátalo como la chispa eléctrica de la marca: pequeñas dosis de alto impacto. Regla práctica — si quitas el lima y la pantalla deja de funcionar, está bien usado.</p>
+      <div class="do-dont" style="margin-top:var(--space-6)">
+        <div class="demo">
+          <div class="demo-label" style="color:var(--success-text)">Sí — dosis puntuales</div>
+          <div class="row-wrap" style="gap:var(--space-3)">
+            <button class="btn btn-primary"><svg class="icon"><use href="#i-bolt"></use></svg> Reservar carga</button>
+            <span class="badge badge-lime"><span class="dot"></span> Disponible</span>
+            <span class="node-dot"></span>
+          </div>
+          <div class="callout do" style="margin-top:var(--space-4)"><svg class="icon"><use href="#i-check-circle"></use></svg><span>CTA principal, estado activo del calendario, acentos de íconos, micro-detalles de energía.</span></div>
+        </div>
+        <div class="demo" style="background:var(--lime-400)">
+          <div class="demo-label" style="color:#16210a">No — bloques grandes saturados</div>
+          <div style="height:64px;display:grid;place-items:center;color:#16210a;font-weight:600">Fondo lima de pantalla completa</div>
+          <div class="callout dont" style="margin-top:var(--space-4)"><svg class="icon"><use href="#i-x-circle"></use></svg><span>Evita fondos amplios en lima 400, textos largos en lima, o varios CTAs lima compitiendo. Para áreas suaves usa <b>--green-soft</b>.</span></div>
+        </div>
+      </div>
+      <div class="grid-auto cols-3" style="margin-top:var(--space-5)">
+        <div class="callout note"><svg class="icon"><use href="#i-info"></use></svg><span><b>Contraste:</b> texto siempre <b>--primary-ink</b> (#16210A) sobre lima. Nunca blanco sobre lima.</span></div>
+        <div class="callout note"><svg class="icon"><use href="#i-info"></use></svg><span><b>Un CTA por vista.</b> Si hay dos acciones, la secundaria va en estilo outline o dark.</span></div>
+        <div class="callout note"><svg class="icon"><use href="#i-info"></use></svg><span><b>Como texto</b> usa <b>--primary-text</b> (lima 800), nunca el 400 sobre blanco.</span></div>
+      </div>
+    </section>
+
+    <!-- TIPOGRAFIA -->
+    <section class="guide-section" id="tipografia">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-list"></use></svg> Tipografía</span>
+      <h2 class="t-h1">Geométrica, ordenada, técnica</h2>
+      <p class="section-desc">Tres familias con roles distintos: <b>Space Grotesk</b> da carácter a los titulares, <b>Hanken Grotesk</b> hace el trabajo de lectura en UI y formularios, y <b>JetBrains Mono</b> aporta precisión a los datos (kW, horas, placas, IDs).</p>
+      <div class="grid-auto cols-3" style="margin:var(--space-6) 0">
+        <div class="card"><div class="t-label">Display · Titulares</div><div style="font-family:var(--font-display);font-size:40px;font-weight:700;letter-spacing:-0.03em;margin:8px 0 4px">Space Grotesk</div><div class="t-sm t-muted">Aa Bb Cc · 0123456789 · 11.0 kW</div></div>
+        <div class="card"><div class="t-label">Body · Interfaz</div><div style="font-family:var(--font-body);font-size:32px;font-weight:600;margin:8px 0 4px">Hanken Grotesk</div><div class="t-sm t-muted">Aa Bb Cc · 0123456789 · J1772</div></div>
+        <div class="card"><div class="t-label">Mono · Datos</div><div style="font-family:var(--font-mono);font-size:30px;font-weight:600;margin:8px 0 4px">JetBrains Mono</div><div class="t-sm t-muted">Aa Bb Cc · 0123456789 · ABC123</div></div>
+      </div>
+      <div class="demo">
+        <div class="type-row"><span class="t-display">Reserva tu carga</span><span class="type-spec">Display · 56/1.02 · Grotesk 700 · -3%</span></div>
+        <div class="type-row"><span class="t-h1">Puntos disponibles hoy</span><span class="type-spec">H1 · 40/1.06 · Grotesk 700</span></div>
+        <div class="type-row"><span class="t-h2">Selecciona fecha y hora</span><span class="type-spec">H2 · 30/1.12 · Grotesk 600</span></div>
+        <div class="type-row"><span class="t-h3">Detalles del vehículo</span><span class="type-spec">H3 · 22/1.2 · Grotesk 600</span></div>
+        <div class="type-row"><span class="t-h4">Tipo de conector</span><span class="type-spec">H4 · 18/1.3 · Grotesk 600</span></div>
+        <div class="type-row"><span class="t-body-lg">Texto destacado para subtítulos e introducciones cortas.</span><span class="type-spec">Body LG · 17/1.55 · Hanken 400</span></div>
+        <div class="type-row"><span class="t-body">Texto normal de párrafo en la interfaz, instrucciones y descripciones.</span><span class="type-spec">Body · 15/1.55 · Hanken 400</span></div>
+        <div class="type-row"><span class="t-sm">Texto pequeño para ayudas y notas secundarias.</span><span class="type-spec">Small · 13.5/1.45 · Hanken 400</span></div>
+        <div class="type-row"><span class="t-label">Etiqueta de campo</span><span class="type-spec">Label · 12.5 · Hanken 600 · +4% · UPPER</span></div>
+        <div class="type-row"><span class="t-data" style="font-size:18px;color:var(--accent-text)">11.0 kW · 14:30 · ABC-123</span><span class="type-spec">Data · Mono 500 · tabular</span></div>
+      </div>
+    </section>
+
+    <!-- ESPACIADO -->
+    <section class="guide-section" id="espaciado">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-grid"></use></svg> Espaciado</span>
+      <h2 class="t-h1">Escala de 4 puntos</h2>
+      <p class="section-desc">Todo el espaciado deriva de una base de 4px. Mantiene el ritmo vertical y el alineado en toda la app, de móvil a panel admin.</p>
+      <div class="demo" style="margin-top:var(--space-6)">
+        <div class="space-demo">
+          <div class="space-bar"><div class="bar" style="height:4px"></div><div class="lbl">1·4</div></div>
+          <div class="space-bar"><div class="bar" style="height:8px"></div><div class="lbl">2·8</div></div>
+          <div class="space-bar"><div class="bar" style="height:12px"></div><div class="lbl">3·12</div></div>
+          <div class="space-bar"><div class="bar" style="height:16px"></div><div class="lbl">4·16</div></div>
+          <div class="space-bar"><div class="bar" style="height:20px"></div><div class="lbl">5·20</div></div>
+          <div class="space-bar"><div class="bar" style="height:24px"></div><div class="lbl">6·24</div></div>
+          <div class="space-bar"><div class="bar" style="height:32px"></div><div class="lbl">7·32</div></div>
+          <div class="space-bar"><div class="bar" style="height:40px"></div><div class="lbl">8·40</div></div>
+          <div class="space-bar"><div class="bar" style="height:48px"></div><div class="lbl">9·48</div></div>
+          <div class="space-bar"><div class="bar" style="height:64px"></div><div class="lbl">10·64</div></div>
+          <div class="space-bar"><div class="bar" style="height:80px"></div><div class="lbl">11·80</div></div>
+          <div class="space-bar"><div class="bar" style="height:96px"></div><div class="lbl">12·96</div></div>
+        </div>
+      </div>
+      <div class="grid-auto cols-3" style="margin-top:var(--space-5)">
+        <div class="callout note"><svg class="icon"><use href="#i-info"></use></svg><span>Padding de tarjeta: <b>24px</b> (space-6). Gap entre tarjetas: <b>16–24px</b>.</span></div>
+        <div class="callout note"><svg class="icon"><use href="#i-info"></use></svg><span>Secciones de página: <b>64–96px</b> verticales. Inputs: <b>46px</b> de alto.</span></div>
+        <div class="callout note"><svg class="icon"><use href="#i-info"></use></svg><span>Toque mínimo móvil: <b>44px</b>. Botones por defecto a 44px de alto.</span></div>
+      </div>
+    </section>
+
+    <!-- RADIOS Y SOMBRAS -->
+    <section class="guide-section" id="radios">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-grid"></use></svg> Bordes, radios y sombras</span>
+      <h2 class="t-h1">Suave, no blando</h2>
+      <p class="section-desc">Esquinas redondeadas generosas para sentirse amigable; sombras frías y sutiles para dar profundidad sin ruido. El brillo lima se reserva para elementos activos de energía.</p>
+      <h3 class="subhead">Radios</h3>
+      <div class="radii-demo">
+        <div class="radii-box" style="border-radius:var(--radius-xs)">6 · xs</div>
+        <div class="radii-box" style="border-radius:var(--radius-sm)">8 · sm</div>
+        <div class="radii-box" style="border-radius:var(--radius-md)">12 · md</div>
+        <div class="radii-box" style="border-radius:var(--radius-lg)">16 · lg</div>
+        <div class="radii-box" style="border-radius:var(--radius-xl)">22 · xl</div>
+        <div class="radii-box" style="border-radius:var(--radius-2xl)">28 · 2xl</div>
+        <div class="radii-box" style="border-radius:var(--radius-pill)">pill</div>
+      </div>
+      <h3 class="subhead">Sombras</h3>
+      <div class="grid-auto cols-4" style="background:var(--bg-page);padding:var(--space-6);border-radius:var(--radius-lg)">
+        <div class="shadow-box" style="box-shadow:var(--shadow-sm)">sm</div>
+        <div class="shadow-box" style="box-shadow:var(--shadow-md)">md</div>
+        <div class="shadow-box" style="box-shadow:var(--shadow-lg)">lg</div>
+        <div class="shadow-box" style="box-shadow:var(--shadow-glow);border:1px solid var(--lime-400)">glow · energía</div>
+      </div>
+    </section>
+
+    <!-- ICONOGRAFIA -->
+    <section class="guide-section" id="iconografia">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-station"></use></svg> Iconografía</span>
+      <h2 class="t-h1">Line icons, trazo 1.75</h2>
+      <p class="section-desc">Set de líneas finas, consistentes y geométricas — trazo de 1.75px, extremos redondeados, viewBox 24. Heredan el color del texto. Prioriza claridad funcional sobre decoración; cada ícono explica algo del servicio.</p>
+      <div class="icon-grid" id="iconGrid" style="margin-top:var(--space-6)"></div>
+      <div class="grid-auto cols-2" style="margin-top:var(--space-5)">
+        <div class="demo"><div class="demo-label">Icon tiles · contenedores</div><div class="row-wrap"><span class="icon-tile"><svg class="icon"><use href="#i-bolt"></use></svg></span><span class="icon-tile dark"><svg class="icon"><use href="#i-station"></use></svg></span><span class="icon-tile accent"><svg class="icon"><use href="#i-battery-charging"></use></svg></span><span class="icon-tile plain"><svg class="icon"><use href="#i-calendar"></use></svg></span></div></div>
+        <div class="callout note" style="align-self:center"><svg class="icon"><use href="#i-info"></use></svg><span>Tamaños: <b>16</b> en línea de texto, <b>20</b> en botones/nav, <b>24</b> en tiles, <b>32+</b> en estados vacíos. Nunca rellenes los íconos de línea salvo los puntos de estado.</span></div>
+      </div>
+    </section>
+
+    <!-- GRAFICA -->
+    <section class="guide-section" id="grafica">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-route"></use></svg> Estilo gráfico</span>
+      <h2 class="t-h1">Flujo eléctrico, con mesura</h2>
+      <p class="section-desc">Detalles geométricos de circuito y líneas de flujo que sugieren energía en movimiento — siempre de soporte, nunca protagonistas. Gradientes tecnológicos solo en superficies oscuras destacadas.</p>
+      <div class="grid-auto cols-2" style="margin-top:var(--space-6)">
+        <div class="demo">
+          <div class="demo-label">Línea de flujo eléctrico</div>
+          <div class="flow-line" style="margin:18px 0"></div>
+          <div class="flow-line" style="margin:18px 0"></div>
+          <p class="t-sm t-muted">Animación sutil de corriente. Úsala en separadores, progreso de carga o conexión cliente↔punto.</p>
+        </div>
+        <div class="demo" style="background:var(--green-deep);border-color:var(--green-deep-2);position:relative;overflow:hidden">
+          <div style="position:absolute;inset:0;opacity:.4;background-image:linear-gradient(rgba(198,245,66,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(198,245,66,.12) 1px,transparent 1px);background-size:26px 26px;mask-image:radial-gradient(circle at 80% 20%,#000,transparent 75%)"></div>
+          <div class="demo-label" style="color:var(--text-on-dark-muted);position:relative">Gradiente tecnológico · panel oscuro</div>
+          <div style="position:relative;margin-top:14px">
+            <div class="t-label" style="color:var(--lime-400)">Carga en curso</div>
+            <div class="power" style="color:var(--cyan-400);font-size:40px;margin-top:4px">7.4<span class="unit">kW</span></div>
+            <div class="flow-line" style="margin-top:14px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-auto cols-3" style="margin-top:var(--space-4)">
+        <div class="callout do"><svg class="icon"><use href="#i-check-circle"></use></svg><span>Patrón de rejilla tenue, nodos de circuito, líneas de flujo de 2px, mapas de ubicación.</span></div>
+        <div class="callout dont"><svg class="icon"><use href="#i-x-circle"></use></svg><span>Rayos por todas partes, glows exagerados, ilustraciones infantiles, 3D recargado.</span></div>
+        <div class="callout note"><svg class="icon"><use href="#i-info"></use></svg><span>Para fotos reales usa marcos redondeados (lg) y un sutil overlay verde-oscuro al pie.</span></div>
+      </div>
+    </section>
+
+    <!-- BOTONES -->
+    <section class="guide-section" id="botones">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-plus"></use></svg> Componente · Botones</span>
+      <h2 class="t-h1">Botones</h2>
+      <p class="section-desc">Una sola acción primaria por contexto. El primario en lima conduce; el resto apoya. Alto base 44px (toque móvil), 36px compacto, 52px hero.</p>
+      <div class="demo" style="margin-top:var(--space-6)">
+        <div class="demo-label">Variantes</div>
+        <div class="row-wrap" style="gap:var(--space-3)">
+          <button class="btn btn-primary"><svg class="icon"><use href="#i-bolt"></use></svg> Confirmar reserva</button>
+          <button class="btn btn-secondary">Secundario</button>
+          <button class="btn btn-dark">Carbón</button>
+          <button class="btn btn-text">Botón de texto</button>
+          <button class="btn btn-danger"><svg class="icon"><use href="#i-x"></use></svg> Cancelar reserva</button>
+          <button class="btn btn-danger-soft">Cancelar suave</button>
+          <button class="btn btn-maps"><svg class="icon"><use href="#i-pin"></use></svg> Abrir en Google Maps</button>
+          <button class="btn btn-primary" disabled>Deshabilitado</button>
+          <button class="btn btn-secondary btn-icon"><svg class="icon"><use href="#i-more-vertical"></use></svg></button>
+        </div>
+        <div class="divider" style="margin:var(--space-5) 0"></div>
+        <div class="demo-label">Tamaños</div>
+        <div class="row-wrap" style="gap:var(--space-3)">
+          <button class="btn btn-primary btn-sm">Pequeño · 36</button>
+          <button class="btn btn-primary">Mediano · 44</button>
+          <button class="btn btn-primary btn-lg"><svg class="icon"><use href="#i-bolt"></use></svg> Grande · 52</button>
+        </div>
+      </div>
+      <div class="demo" style="margin-top:var(--space-4)">
+        <div class="demo-label">Estados (primario)</div>
+        <table class="tok-table">
+          <thead><tr><th>Estado</th><th>Fondo</th><th>Texto</th><th>Detalle</th></tr></thead>
+          <tbody>
+            <tr><td>Normal</td><td><code>--primary</code> #C6F542</td><td><code>--primary-ink</code></td><td>shadow-xs</td></tr>
+            <tr><td>Hover</td><td><code>--primary-hover</code> #AEE21F</td><td><code>--primary-ink</code></td><td>+ shadow-glow</td></tr>
+            <tr><td>Activo</td><td><code>--primary-active</code> #8BBE12</td><td><code>--primary-ink</code></td><td>translateY(1px)</td></tr>
+            <tr><td>Foco</td><td>—</td><td>—</td><td>anillo lima 3px</td></tr>
+            <tr><td>Deshabilitado</td><td><code>--bg-sunken</code></td><td><code>--slate-400</code></td><td>cursor not-allowed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- INPUTS -->
+    <section class="guide-section" id="inputs">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-edit"></use></svg> Componente · Inputs y formularios</span>
+      <h2 class="t-h1">Formularios simples y confiables</h2>
+      <p class="section-desc">Campos altos y cómodos, foco lima inequívoco, errores claros pero amables. El formulario de reserva debe sentirse rápido: pocos campos, ayudas útiles, validación en contexto.</p>
+      <div class="grid-auto cols-2" style="margin-top:var(--space-6)">
+        <div class="demo stack">
+          <div class="field"><label class="field-label">Nombre completo <span class="req">*</span></label><div class="input-group"><span class="input-icon"><svg class="icon icon-sm"><use href="#i-user"></use></svg></span><input class="input" placeholder="Camila Restrepo"></div></div>
+          <div class="field"><label class="field-label">WhatsApp <span class="req">*</span></label><div class="input-group"><span class="input-icon"><svg class="icon icon-sm"><use href="#i-whatsapp"></use></svg></span><input class="input" placeholder="300 123 4567"></div><span class="field-hint">Te enviaremos la confirmación por aquí.</span></div>
+          <div class="field"><label class="field-label">Correo</label><div class="input-group"><span class="input-icon"><svg class="icon icon-sm"><use href="#i-mail"></use></svg></span><input class="input" type="email" placeholder="camila@correo.com"></div></div>
+          <div class="field"><label class="field-label">Placa del vehículo <span class="req">*</span></label><input class="input" value="ABC-123" aria-invalid="true" style="font-family:var(--font-mono)"><span class="field-error"><svg class="icon icon-sm"><use href="#i-alert"></use></svg> Formato inválido. Usa ABC-12D.</span></div>
+        </div>
+        <div class="demo stack">
+          <div class="field"><label class="field-label">Tipo de conector <span class="req">*</span></label>
+            <div class="chooser">
+              <label class="chooser-opt"><input type="radio" name="conn" checked><span class="mark"></span><span class="icon-tile plain" style="width:36px;height:36px"><svg class="icon icon-sm"><use href="#i-ev-connector"></use></svg></span><span><b>J1772 · Tipo 1</b><br><span class="t-xs t-muted">Estándar de la estación</span></span></label>
+              <label class="chooser-opt"><input type="radio" name="conn"><span class="mark"></span><span class="icon-tile plain" style="width:36px;height:36px"><svg class="icon icon-sm"><use href="#i-plug"></use></svg></span><span><b>Tipo 2 (adaptador)</b><br><span class="t-xs t-muted">Disponible en sitio</span></span></label>
+              <label class="chooser-opt"><input type="radio" name="conn"><span class="mark"></span><span class="icon-tile plain" style="width:36px;height:36px"><svg class="icon icon-sm"><use href="#i-plug"></use></svg></span><span><b>GB/T-AC (adaptador)</b><br><span class="t-xs t-muted">Disponible en sitio</span></span></label>
+            </div>
+          </div>
+          <div class="row" style="gap:var(--space-3)">
+            <div class="field grow"><label class="field-label">Fecha <span class="req">*</span></label><div class="input-group"><span class="input-icon"><svg class="icon icon-sm"><use href="#i-calendar"></use></svg></span><input class="input" value="12 Jun 2026"></div></div>
+            <div class="field grow"><label class="field-label">Hora <span class="req">*</span></label><div class="select-wrap"><select class="select"><option>14:30</option><option>15:00</option><option>15:30</option></select></div></div>
+          </div>
+          <div class="field"><label class="field-label">Observaciones</label><textarea class="textarea" placeholder="¿Algo que debamos saber sobre tu vehículo o llegada?"></textarea></div>
+          <label class="check"><input type="checkbox" checked><span class="box"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4 10-10" stroke="currentColor"/></svg></span><span>Acepto los <b style="color:var(--lime-800)">términos del servicio</b> y la política de datos.</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARJETAS -->
+    <section class="guide-section" id="tarjetas">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-grid"></use></svg> Componente · Tarjetas</span>
+      <h2 class="t-h1">Tarjetas de información</h2>
+      <p class="section-desc">Cada tarjeta resuelve una pregunta del usuario: ¿dónde?, ¿qué cargador?, ¿cuánta potencia?, ¿en qué estado va mi reserva? Título + ícono + dato corto, con jerarquía clara.</p>
+      <div class="grid-auto cols-3" style="margin-top:var(--space-6)">
+        <div class="card card-hover">
+          <div class="card-head"><span class="icon-tile"><svg class="icon"><use href="#i-pin"></use></svg></span><div class="grow"><div class="card-title">Ubicación</div><div class="card-sub">Punto de carga</div></div></div>
+          <p class="t-sm" style="color:var(--text-default)">Cra. 100 #16-20, Ciudad Jardín, Cali. Parqueadero cubierto, bahía 3.</p>
+          <button class="btn btn-maps btn-sm btn-block" style="margin-top:14px"><svg class="icon"><use href="#i-pin"></use></svg> Abrir en Google Maps</button>
+        </div>
+        <div class="card card-hover">
+          <div class="card-head"><span class="icon-tile accent"><svg class="icon"><use href="#i-battery-charging"></use></svg></span><div class="grow"><div class="card-title">Potencia máxima</div><div class="card-sub">Cargador AC</div></div></div>
+          <div class="power" style="font-size:38px;margin:6px 0">11.0<span class="unit">kW</span></div>
+          <div class="flow-line" style="margin-top:4px"></div>
+        </div>
+        <div class="card card-hover">
+          <div class="card-head"><span class="icon-tile"><svg class="icon"><use href="#i-ev-connector"></use></svg></span><div class="grow"><div class="card-title">Conectores</div><div class="card-sub">Compatibilidad</div></div></div>
+          <div class="kv"><span class="k">J1772 · Tipo 1</span><span class="badge badge-success"><svg class="icon"><use href="#i-check"></use></svg> Estándar</span></div>
+          <div class="kv"><span class="k">Tipo 2</span><span class="badge badge-lime">Adaptador</span></div>
+          <div class="kv"><span class="k">GB/T-AC</span><span class="badge badge-lime">Adaptador</span></div>
+        </div>
+        <div class="card card-dark" style="grid-column:span 2">
+          <div class="card-head"><span class="icon-tile dark"><svg class="icon"><use href="#i-calendar-check"></use></svg></span><div class="grow"><div class="card-title" style="color:#fff">Próxima reserva</div><div class="card-sub" style="color:var(--text-on-dark-muted)">Confirmada</div></div><span class="badge badge-success"><span class="dot"></span> Confirmada</span></div>
+          <div class="row-wrap" style="gap:var(--space-7);margin-top:6px">
+            <div><div class="t-label" style="color:var(--text-on-dark-muted)">Fecha</div><div class="t-data" style="color:#fff;font-size:18px">Vie 12 Jun · 14:30</div></div>
+            <div><div class="t-label" style="color:var(--text-on-dark-muted)">Vehículo</div><div class="t-data" style="color:#fff;font-size:18px">ABC-123</div></div>
+            <div><div class="t-label" style="color:var(--text-on-dark-muted)">Conector</div><div class="t-data" style="color:var(--lime-400);font-size:18px">J1772</div></div>
+          </div>
+        </div>
+        <div class="card card-hover">
+          <div class="card-head"><span class="icon-tile plain"><svg class="icon"><use href="#i-info"></use></svg></span><div class="grow"><div class="card-title">Instrucciones</div></div></div>
+          <ol class="t-sm" style="color:var(--text-default);padding-left:18px;margin:0;display:grid;gap:6px"><li>Llega 5 min antes.</li><li>Conecta usando tu cable o el adaptador.</li><li>Inicia desde la app.</li></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALENDARIO -->
+    <section class="guide-section" id="calendario">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-calendar"></use></svg> Componente · Calendario y disponibilidad</span>
+      <h2 class="t-h1">Elegir fecha y hora, sin fricción</h2>
+      <p class="section-desc">El calendario comunica disponibilidad de un vistazo: un punto verde si hay cupos, rojo si está lleno, lima si está seleccionado. Los horarios siguen la misma lógica.</p>
+      <div class="grid-auto" style="grid-template-columns: 1fr 1.1fr; margin-top:var(--space-6); align-items:start">
+        <div class="calendar" id="demoCal">
+          <div class="cal-head"><div class="cal-title">Junio 2026</div><div class="cal-nav"><button><svg class="icon icon-sm"><use href="#i-chevron-left"></use></svg></button><button><svg class="icon icon-sm"><use href="#i-chevron-right"></use></svg></button></div></div>
+          <div class="cal-grid" id="calGrid"></div>
+          <div class="divider" style="margin:16px 0"></div>
+          <div class="legend"><span class="legend-item"><span class="legend-swatch" style="background:var(--success)"></span> Disponible</span><span class="legend-item"><span class="legend-swatch" style="background:var(--danger)"></span> Lleno</span><span class="legend-item"><span class="legend-swatch" style="background:var(--primary)"></span> Seleccionado</span><span class="legend-item"><span class="legend-swatch" style="background:var(--bg-sunken);border:1px solid var(--border)"></span> No disponible</span></div>
+        </div>
+        <div class="demo">
+          <div class="demo-label">Horarios · Vie 12 Jun</div>
+          <div class="slots" id="demoSlots" style="margin-bottom:var(--space-5)"></div>
+          <div class="demo-label">Estado sin disponibilidad</div>
+          <div class="empty" style="padding:var(--space-6)"><span class="icon-tile plain"><svg class="icon"><use href="#i-clock"></use></svg></span><p class="t-sm t-muted" style="margin-top:10px">No quedan cupos este día.<br>Prueba con otra fecha cercana.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BADGES -->
+    <section class="guide-section" id="badges">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-tag"></use></svg> Componente · Badges y estados</span>
+      <h2 class="t-h1">Estados que se entienden solos</h2>
+      <p class="section-desc">Color + texto + (opcional) ícono. Nunca solo color: siempre acompañado de palabra para accesibilidad. El estado "Cargando" usa el acento cian con un punto que late.</p>
+      <div class="demo" style="margin-top:var(--space-6)">
+        <div class="demo-label">Ciclo de reserva</div>
+        <div class="row-wrap" style="gap:var(--space-3)">
+          <span class="badge badge-success"><svg class="icon"><use href="#i-check"></use></svg> Confirmada</span>
+          <span class="badge badge-danger"><svg class="icon"><use href="#i-x"></use></svg> Cancelada</span>
+          <span class="badge badge-info"><svg class="icon"><use href="#i-check-circle"></use></svg> Finalizada</span>
+          <span class="badge badge-noshow"><svg class="icon"><use href="#i-ban"></use></svg> No asistió</span>
+          <span class="badge badge-charging"><span class="dot"></span> Cargando</span>
+        </div>
+        <div class="divider" style="margin:var(--space-5) 0"></div>
+        <div class="demo-label">Disponibilidad y atributos</div>
+        <div class="row-wrap" style="gap:var(--space-3)">
+          <span class="badge badge-lime"><span class="dot"></span> Disponible</span>
+          <span class="badge badge-warning"><span class="dot"></span> Ocupado</span>
+          <span class="badge badge-neutral">No disponible</span>
+          <span class="badge badge-info"><svg class="icon"><use href="#i-plug"></use></svg> Adaptador requerido</span>
+          <span class="badge badge-charging"><svg class="icon"><use href="#i-bolt"></use></svg> Cargador activo</span>
+          <span class="badge badge-solid"><svg class="icon"><use href="#i-bolt"></use></svg> 11.0 kW</span>
+        </div>
+      </div>
+      <div class="demo" style="margin-top:var(--space-4)">
+        <table class="tok-table">
+          <thead><tr><th>Estado</th><th>Clase</th><th>Color</th><th>Uso</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge badge-success">Confirmada</span></td><td><code>.badge-success</code></td><td>Verde</td><td>Reserva aceptada y vigente</td></tr>
+            <tr><td><span class="badge badge-lime">Disponible</span></td><td><code>.badge-lime</code></td><td>Lima</td><td>Cupo o punto libre</td></tr>
+            <tr><td><span class="badge badge-warning">Ocupado</span></td><td><code>.badge-warning</code></td><td>Ámbar</td><td>Punto en uso ahora</td></tr>
+            <tr><td><span class="badge badge-danger">Cancelada</span></td><td><code>.badge-danger</code></td><td>Rojo</td><td>Reserva anulada</td></tr>
+            <tr><td><span class="badge badge-charging"><span class="dot"></span>Cargando</span></td><td><code>.badge-charging</code></td><td>Cian</td><td>Sesión de carga en vivo</td></tr>
+            <tr><td><span class="badge badge-info">Finalizada</span></td><td><code>.badge-info</code></td><td>Azul</td><td>Carga completada</td></tr>
+            <tr><td><span class="badge badge-noshow">No asistió</span></td><td><code>.badge-noshow</code></td><td>Terracota</td><td>Cliente no llegó</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- NAVEGACION -->
+    <section class="guide-section" id="navegacion">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-menu"></use></svg> Componente · Navegación</span>
+      <h2 class="t-h1">Navegación clara en desktop y móvil</h2>
+      <p class="section-desc">En desktop, barra superior con marca + enlaces + CTA. En móvil, tab bar inferior con los destinos clave al alcance del pulgar.</p>
+      <div class="demo sunken" style="margin-top:var(--space-6);padding:0;overflow:hidden">
+        <div class="nav" style="position:static">
+          <div class="brand"><span class="brand-mark"><svg class="icon"><use href="#i-bolt"></use></svg></span> ELECTROLANDIA</div>
+          <div class="nav-links grow" style="justify-content:center">
+            <a class="nav-link active"><svg class="icon"><use href="#i-home"></use></svg> Inicio</a>
+            <a class="nav-link"><svg class="icon"><use href="#i-calendar"></use></svg> Reservar</a>
+            <a class="nav-link"><svg class="icon"><use href="#i-list"></use></svg> Mis reservas</a>
+          </div>
+          <button class="btn btn-primary btn-sm"><svg class="icon"><use href="#i-bolt"></use></svg> Reservar</button>
+        </div>
+      </div>
+      <div class="grid-auto cols-2" style="margin-top:var(--space-5);align-items:start">
+        <div class="demo">
+          <div class="demo-label">Tab bar móvil</div>
+          <div style="max-width:320px;margin:0 auto;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden">
+            <div class="tabbar">
+              <div class="tabbar-item active"><svg class="icon"><use href="#i-home"></use></svg> Inicio</div>
+              <div class="tabbar-item"><svg class="icon"><use href="#i-calendar"></use></svg> Reservar</div>
+              <div class="tabbar-item"><svg class="icon"><use href="#i-list"></use></svg> Reservas</div>
+              <div class="tabbar-item"><svg class="icon"><use href="#i-user"></use></svg> Perfil</div>
+            </div>
+          </div>
+        </div>
+        <div class="demo">
+          <div class="demo-label">Segmented · admin</div>
+          <div class="segment"><button class="active">Hoy</button><button>Próximas</button><button>Calendario</button></div>
+          <div class="demo-label" style="margin-top:var(--space-5)">Nav admin lateral</div>
+          <div class="stack" style="--space-4:6px;max-width:240px">
+            <a class="nav-link active" style="width:100%"><svg class="icon"><use href="#i-grid"></use></svg> Reservas del día</a>
+            <a class="nav-link" style="width:100%"><svg class="icon"><use href="#i-calendar"></use></svg> Calendario</a>
+            <a class="nav-link" style="width:100%"><svg class="icon"><use href="#i-settings"></use></svg> Configuración</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLA -->
+    <section class="guide-section" id="tabla">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-list"></use></svg> Componente · Panel administrativo</span>
+      <h2 class="t-h1">Tabla de reservas operativa</h2>
+      <p class="section-desc">El admin necesita ver mucho, rápido. Filas cómodas, datos en mono, estados con badge, acciones a mano. Buscador y filtros arriba; resumen del día en tarjetas.</p>
+      <div class="grid-auto cols-4" style="margin:var(--space-6) 0">
+        <div class="card"><div class="stat"><span class="stat-label">Reservas hoy</span><span class="stat-value data">14</span></div></div>
+        <div class="card"><div class="stat"><span class="stat-label">Confirmadas</span><span class="stat-value data" style="color:var(--success-text)">09</span></div></div>
+        <div class="card"><div class="stat"><span class="stat-label">En curso</span><span class="stat-value data" style="color:var(--accent-text)">02</span></div></div>
+        <div class="card"><div class="stat"><span class="stat-label">Energía hoy</span><span class="stat-value data">88<span class="stat-unit">kWh</span></span></div></div>
+      </div>
+      <div class="toolbar" style="margin-bottom:var(--space-4)">
+        <div class="search"><span class="input-icon"><svg class="icon icon-sm"><use href="#i-search"></use></svg></span><input class="input" placeholder="Buscar por nombre, placa o WhatsApp…"></div>
+        <button class="filter-chip active"><svg class="icon icon-sm"><use href="#i-filter"></use></svg> Todas</button>
+        <button class="filter-chip">Confirmadas</button>
+        <button class="filter-chip">En curso</button>
+        <button class="filter-chip"><svg class="icon icon-sm"><use href="#i-plus"></use></svg> Nueva</button>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Cliente</th><th>Contacto</th><th>Vehículo</th><th>Conector</th><th>Fecha · Hora</th><th>Estado</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><div class="cust"><span class="avatar">CR</span><div><div style="font-weight:600;color:var(--text-strong)">Camila Restrepo</div><div class="t-xs t-muted">camila@correo.com</div></div></div></td><td><span class="mono">300 123 4567</span></td><td><span class="mono">ABC-123</span><div class="t-xs t-muted">Renault Zoe</div></td><td><span class="badge badge-neutral">J1772</span></td><td><span class="mono">12 Jun · 14:30</span></td><td><span class="badge badge-charging"><span class="dot"></span> Cargando</span></td><td><div class="row" style="gap:2px"><button class="icon-btn"><svg class="icon icon-sm"><use href="#i-edit"></use></svg></button><button class="icon-btn danger"><svg class="icon icon-sm"><use href="#i-trash"></use></svg></button></div></td></tr>
+            <tr><td><div class="cust"><span class="avatar">JM</span><div><div style="font-weight:600;color:var(--text-strong)">Julián Mejía</div><div class="t-xs t-muted">julian@correo.com</div></div></div></td><td><span class="mono">301 555 7788</span></td><td><span class="mono">XYZ-89D</span><div class="t-xs t-muted">BYD Dolphin</div></td><td><span class="badge badge-info">Tipo 2</span></td><td><span class="mono">12 Jun · 15:30</span></td><td><span class="badge badge-success"><span class="dot"></span> Confirmada</span></td><td><div class="row" style="gap:2px"><button class="icon-btn"><svg class="icon icon-sm"><use href="#i-edit"></use></svg></button><button class="icon-btn danger"><svg class="icon icon-sm"><use href="#i-trash"></use></svg></button></div></td></tr>
+            <tr><td><div class="cust"><span class="avatar">VL</span><div><div style="font-weight:600;color:var(--text-strong)">Valeria Lozano</div><div class="t-xs t-muted">valeria@correo.com</div></div></div></td><td><span class="mono">312 444 2211</span></td><td><span class="mono">GHT-45</span><div class="t-xs t-muted">Volvo EX30</div></td><td><span class="badge badge-neutral">J1772</span></td><td><span class="mono">12 Jun · 16:00</span></td><td><span class="badge badge-warning"><span class="dot"></span> Ocupado</span></td><td><div class="row" style="gap:2px"><button class="icon-btn"><svg class="icon icon-sm"><use href="#i-edit"></use></svg></button><button class="icon-btn danger"><svg class="icon icon-sm"><use href="#i-trash"></use></svg></button></div></td></tr>
+            <tr><td><div class="cust"><span class="avatar">AR</span><div><div style="font-weight:600;color:var(--text-strong)">Andrés Ríos</div><div class="t-xs t-muted">andres@correo.com</div></div></div></td><td><span class="mono">300 998 1100</span></td><td><span class="mono">PLK-77</span><div class="t-xs t-muted">Kia Niro</div></td><td><span class="badge badge-info">GB/T-AC</span></td><td><span class="mono">11 Jun · 09:00</span></td><td><span class="badge badge-info"><svg class="icon"><use href="#i-check-circle"></use></svg> Finalizada</span></td><td><div class="row" style="gap:2px"><button class="icon-btn"><svg class="icon icon-sm"><use href="#i-edit"></use></svg></button><button class="icon-btn danger"><svg class="icon icon-sm"><use href="#i-trash"></use></svg></button></div></td></tr>
+            <tr><td><div class="cust"><span class="avatar">SN</span><div><div style="font-weight:600;color:var(--text-strong)">Sara Nieto</div><div class="t-xs t-muted">sara@correo.com</div></div></div></td><td><span class="mono">315 222 6644</span></td><td><span class="mono">RTY-12</span><div class="t-xs t-muted">Tesla Model 3</div></td><td><span class="badge badge-neutral">J1772</span></td><td><span class="mono">11 Jun · 18:30</span></td><td><span class="badge badge-noshow"><svg class="icon"><use href="#i-ban"></use></svg> No asistió</span></td><td><div class="row" style="gap:2px"><button class="icon-btn"><svg class="icon icon-sm"><use href="#i-edit"></use></svg></button><button class="icon-btn danger"><svg class="icon icon-sm"><use href="#i-trash"></use></svg></button></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- RESPONSIVE -->
+    <section class="guide-section" id="responsive">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-gauge"></use></svg> Responsive</span>
+      <h2 class="t-h1">Móvil primero, escala con gracia</h2>
+      <p class="section-desc">La mayoría reservará desde el celular. El layout es de una columna en móvil con tab bar inferior; en desktop se expande a dos o tres columnas y barra superior. Breakpoints: 640 / 940 / 1200.</p>
+      <div class="grid-auto" style="grid-template-columns:auto 1fr;gap:var(--space-8);margin-top:var(--space-6);align-items:center">
+        <div class="phone">
+          <div class="screen">
+            <div style="background:var(--carbon-900);padding:14px 16px;color:#fff;display:flex;align-items:center;gap:8px"><span class="brand-mark" style="width:26px;height:26px;border-radius:7px"><svg class="icon icon-sm"><use href="#i-bolt"></use></svg></span><b style="font-family:var(--font-display);font-size:14px">ELECTROLANDIA</b></div>
+            <div style="padding:16px">
+              <div class="t-label" style="color:var(--lime-800)">Punto · Ciudad Jardín</div>
+              <div class="t-h3" style="margin:4px 0 12px">Reserva tu carga</div>
+              <div class="card" style="padding:14px;margin-bottom:12px"><div class="row between"><span class="t-sm t-muted">Potencia</span><span class="power">11.0<span class="unit">kW</span></span></div></div>
+              <div class="slots" style="grid-template-columns:1fr 1fr"><div class="slot selected">14:30</div><div class="slot">15:00</div><div class="slot busy">15:30</div><div class="slot">16:00</div></div>
+              <button class="btn btn-primary btn-block" style="margin-top:14px"><svg class="icon"><use href="#i-bolt"></use></svg> Continuar</button>
+            </div>
+            <div class="tabbar" style="margin-top:8px"><div class="tabbar-item active"><svg class="icon"><use href="#i-home"></use></svg>Inicio</div><div class="tabbar-item"><svg class="icon"><use href="#i-calendar"></use></svg>Reservar</div><div class="tabbar-item"><svg class="icon"><use href="#i-user"></use></svg>Perfil</div></div>
+          </div>
+        </div>
+        <div class="stack">
+          <div class="callout note"><svg class="icon"><use href="#i-info"></use></svg><span><b>≤640px</b> — una columna, tab bar inferior, botones full-width, tarjetas apiladas.</span></div>
+          <div class="callout note"><svg class="icon"><use href="#i-info"></use></svg><span><b>640–940px</b> — dos columnas en tarjetas, formularios en una columna ancha.</span></div>
+          <div class="callout note"><svg class="icon"><use href="#i-info"></use></svg><span><b>≥940px</b> — barra superior, layouts de 2–3 columnas, panel admin con tabla completa.</span></div>
+          <div class="callout do"><svg class="icon"><use href="#i-check-circle"></use></svg><span>Toques de mínimo 44px, texto nunca menor a 13.5px, calendario y horarios siempre cómodos para el pulgar.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANTALLAS -->
+    <section class="guide-section" id="pantallas">
+      <span class="section-eyebrow"><svg class="icon"><use href="#i-station"></use></svg> Aplicación · Pantallas</span>
+      <h2 class="t-h1">El sistema, en acción</h2>
+      <p class="section-desc">Tres pantallas de ejemplo, totalmente interactivas, construidas solo con estos tokens y componentes. Ábrelas para ver el sistema funcionando de punta a punta.</p>
+      <div class="grid-auto cols-3" style="margin-top:var(--space-6)">
+        <a class="screen-card" href="pantallas/Home.html"><div class="thumb"><svg class="icon"><use href="#i-home"></use></svg></div><div class="sc-body"><div><div style="font-weight:600;color:var(--text-strong)">Home del servicio</div><div class="t-xs t-muted">Punto, potencia, CTA reservar</div></div><svg class="icon"><use href="#i-arrow-right"></use></svg></div></a>
+        <a class="screen-card" href="pantallas/Reserva.html"><div class="thumb"><svg class="icon"><use href="#i-calendar-check"></use></svg></div><div class="sc-body"><div><div style="font-weight:600;color:var(--text-strong)">Reserva</div><div class="t-xs t-muted">Fecha, hora, datos, confirmación</div></div><svg class="icon"><use href="#i-arrow-right"></use></svg></div></a>
+        <a class="screen-card" href="pantallas/Panel Admin.html"><div class="thumb"><svg class="icon"><use href="#i-grid"></use></svg></div><div class="sc-body"><div><div style="font-weight:600;color:var(--text-strong)">Panel admin</div><div class="t-xs t-muted">Tabla, filtros, resumen del día</div></div><svg class="icon"><use href="#i-arrow-right"></use></svg></div></a>
+      </div>
+      <div class="flow-line" style="margin:var(--space-9) 0 var(--space-6)"></div>
+      <p class="t-sm t-muted text-pretty">ELECTROLANDIA Design System · v1.0 · Construido con Space Grotesk, Hanken Grotesk y JetBrains Mono. Todos los tokens viven en <code style="font-family:var(--font-mono);background:var(--bg-sunken);padding:2px 6px;border-radius:5px">styles/tokens.css</code> · Listo para Claude Code.</p>
+    </section>
+
+  </main>
+</div>
+
+<script src="assets/icons.js"></script>
+<script>
+// Icon grid
+(function () {
+  var grid = document.getElementById('iconGrid');
+  function render() {
+    var names = window.ELECTRO_ICONS || [];
+    grid.innerHTML = names.map(function (n) {
+      return '<div class="icon-cell"><svg class="icon"><use href="#i-' + n + '"></use></svg><span>' + n + '</span></div>';
+    }).join('');
+  }
+  if (window.ELECTRO_ICONS) render(); else window.addEventListener('load', render);
+})();
+
+// Demo calendar
+(function () {
+  var grid = document.getElementById('calGrid');
+  if (!grid) return;
+  var dows = ['L','M','M','J','V','S','D'];
+  var html = dows.map(function (d) { return '<div class="cal-dow">' + d + '</div>'; }).join('');
+  // June 2026 starts Monday (1st = Mon)
+  var full = {3:1, 9:1, 17:1, 23:1};
+  var selected = 12;
+  for (var i = 1; i <= 30; i++) {
+    var cls = 'cal-day';
+    if (full[i]) cls += ' full';
+    else cls += ' has-slots';
+    if (i === selected) cls += ' selected';
+    if (i === 5) cls += ' today';
+    html += '<div class="' + cls + '" data-day="' + i + '">' + i + '</div>';
+  }
+  grid.innerHTML = html;
+  grid.addEventListener('click', function (e) {
+    var cell = e.target.closest('.cal-day');
+    if (!cell || cell.classList.contains('full') || cell.classList.contains('muted')) return;
+    grid.querySelectorAll('.cal-day.selected').forEach(function (c) { c.classList.remove('selected'); });
+    cell.classList.add('selected');
+  });
+})();
+
+// Demo slots
+(function () {
+  var wrap = document.getElementById('demoSlots');
+  if (!wrap) return;
+  var times = ['08:00','08:30','09:00','09:30','10:00','14:00','14:30','15:00','15:30','16:00'];
+  var busy = {'09:00':1,'15:30':1};
+  var sel = '14:30';
+  wrap.innerHTML = times.map(function (t) {
+    var c = 'slot' + (busy[t] ? ' busy' : '') + (t === sel ? ' selected' : '');
+    return '<div class="' + c + '" data-t="' + t + '">' + t + '</div>';
+  }).join('');
+  wrap.addEventListener('click', function (e) {
+    var s = e.target.closest('.slot');
+    if (!s || s.classList.contains('busy')) return;
+    wrap.querySelectorAll('.slot.selected').forEach(function (c) { c.classList.remove('selected'); });
+    s.classList.add('selected');
+  });
+})();
+
+// Scroll spy
+(function () {
+  var links = Array.from(document.querySelectorAll('.guide-nav a'));
+  var map = {};
+  links.forEach(function (l) { map[l.getAttribute('href').slice(1)] = l; });
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        links.forEach(function (l) { l.classList.remove('active'); });
+        var a = map[en.target.id];
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -65% 0px' });
+  document.querySelectorAll('.guide-section').forEach(function (s) { obs.observe(s); });
+})();
+</script>
+</body>
+</html>
